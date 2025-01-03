@@ -1,14 +1,16 @@
 import { AnimatedBackground } from '@components/ui/animated-background'
+import { Button } from '@components/ui/button'
+import { cn } from '@lib/utils'
+import Link from 'next/link'
 import React from 'react'
+import { TABS } from './constants'
+import { NavigationMenuProps } from './types'
 
-const HeaderNavigationMenu = () => {
-	const TABS = ['Home', 'About', 'Services', 'Contact']
-
+const HeaderNavigationMenu = ({ className }: NavigationMenuProps) => {
 	return (
-		<nav className='flex flex-row'>
+		<nav className={cn(className)}>
 			<AnimatedBackground
-				defaultValue={TABS[0]}
-				className='rounded-lg bg-zinc-100 dark:bg-red-800'
+				className={cn('rounded-lg bg-zinc-100 dark:bg-red-800')}
 				transition={{
 					type: 'spring',
 					bounce: 0.2,
@@ -16,15 +18,18 @@ const HeaderNavigationMenu = () => {
 				}}
 				enableHover
 			>
-				{TABS.map((tab, index) => (
-					<button
-						key={index}
-						data-id={tab}
+				{TABS.map(({ id, title, href }) => (
+					<Button
+						variant='ghost'
+						key={id}
+						data-id={id}
 						type='button'
-						className='px-2 py-0.5 text-zinc-600 transition-colors duration-300 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50'
+						className='px-2 py-0.5 text-zinc-600 transition-colors duration-300 hover:text-zinc-950 dark:text-white dark:hover:text-zinc-50'
+						asChild
+						role='link'
 					>
-						{tab}
-					</button>
+						<Link href={href}>{title}</Link>
+					</Button>
 				))}
 			</AnimatedBackground>
 		</nav>

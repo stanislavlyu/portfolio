@@ -1,0 +1,118 @@
+import Container from '@components/Container'
+import Section from '@components/Section'
+import Title from '@components/Title'
+import { Button } from '@components/ui/button'
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNavigation,
+} from '@components/ui/carousel'
+import { cn } from '@lib/utils'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import { SLIDES, SlideVariant } from './constants'
+
+const CaseStudies = () => {
+	return (
+		<Section id='case-studies' className='pb-20 md:mb-[10rem]'>
+			<Container>
+				<Title
+					title='Case Studies'
+					text='An in-depth exploration of projects and challenges, showcasing innovative solutions, strategic thinking, and measurable outcomes that demonstrate expertise and impact.'
+				/>
+				<div className='relative mt-16 w-full'>
+					<Carousel>
+						<CarouselContent className='-ml-4'>
+							{SLIDES.map(
+								({
+									variant,
+									title,
+									description,
+									mockupImage,
+									backgroundImage,
+									logo,
+									button,
+								}) => (
+									<CarouselItem key={title} className='basis-full pl-4'>
+										<div className='relative basis-full overflow-hidden rounded-2xl'>
+											<Image
+												className='absolute left-0 right-0 h-full w-full object-cover'
+												fill
+												placeholder='blur'
+												{...backgroundImage}
+											/>
+											<div className='grid grid-cols-1 justify-between px-6 py-6 lg:grid-cols-2 lg:px-16 lg:py-10'>
+												<div
+													className={cn(
+														'relative z-10 flex h-full flex-grow flex-col items-start justify-between gap-6 md:gap-8',
+														{
+															'text-white':
+																variant === SlideVariant.White,
+															'text-black':
+																variant === SlideVariant.Black,
+														}
+													)}
+												>
+													<div>
+														<Image className='object-cover' {...logo} />
+														<h3 className='mt-6 text-[1.5625rem] font-semibold leading-[2.1875rem] lg:mt-8 lg:text-[2.375rem] lg:leading-[3rem]'>
+															{title}
+														</h3>
+														<p
+															className={cn(
+																'mt-6 text-[0.875rem] leading-6 md:min-h-[4.5rem] lg:mt-4',
+																{
+																	'text-gray-300':
+																		variant ===
+																		SlideVariant.White,
+																	'text-black':
+																		variant ===
+																		SlideVariant.Black,
+																}
+															)}
+														>
+															{description}
+														</p>
+													</div>
+													<Button
+														variant={
+															variant === SlideVariant.Black
+																? 'secondary'
+																: 'default'
+														}
+														asChild
+													>
+														<Link href={button.href}>
+															{button.title}
+														</Link>
+													</Button>
+												</div>
+												<div className='relative h-full w-full'>
+													<Image
+														className='z-10 object-cover'
+														fill
+														placeholder='blur'
+														{...mockupImage}
+													/>
+												</div>
+											</div>
+										</div>
+									</CarouselItem>
+								)
+							)}
+						</CarouselContent>
+						<CarouselNavigation
+							className='absolute -bottom-20 left-auto top-auto w-full justify-end gap-2'
+							classNameButton='bg-zinc-800 *:stroke-zinc-50 dark:bg-zinc-200 dark:*:stroke-zinc-800'
+							alwaysShow
+						/>
+					</Carousel>
+				</div>
+			</Container>
+		</Section>
+	)
+}
+
+export default CaseStudies

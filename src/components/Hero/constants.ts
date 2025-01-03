@@ -1,4 +1,4 @@
-export const SKILL_LIST = ['Next.js', 'React', 'Angular', 'Strapi']
+export const SKILL_LIST = ['Next.js', 'React', 'Angular', 'JavaScript', 'TypeScript']
 
 export const TECH_ICONS = [
 	{ path: '/assets/icons/tech/CSS3.svg', alt: 'CSS3' },
@@ -30,7 +30,6 @@ export const TECH_ICONS = [
 	{ path: '/assets/icons/tech/GraphQL.svg', alt: 'GraphQL' },
 	{ path: '/assets/icons/tech/GitLab.svg', alt: 'GitLab' },
 	{ path: '/assets/icons/tech/Figma.svg', alt: 'Figma' },
-	{ path: '/assets/icons/tech/Express.svg', alt: 'Express', className: 'dark:bg-white' },
 	{ path: '/assets/icons/tech/ESLint.svg', alt: 'ESLint' },
 	{ path: '/assets/icons/tech/Docker.svg', alt: 'Docker' },
 ]

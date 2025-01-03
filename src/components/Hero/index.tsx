@@ -8,11 +8,12 @@ import { Tilt } from '@components/ui/tilt'
 import { cn } from '@lib/utils'
 import Image from 'next/image'
 import React from 'react'
+import avatar from '../../../public/assets/images/avatar.webp'
 import { SKILL_LIST, TECH_ICONS } from './constants'
 
 const Hero = () => {
 	return (
-		<section className='relative h-dvh overflow-x-hidden md:min-h-[46rem]'>
+		<section className='relative h-dvh snap-center overflow-x-hidden md:min-h-[46rem]'>
 			<div className='absolute right-[1rem] top-0 h-[20%] w-[15%] rounded-full bg-gradient-to-r from-white to-black blur-3xl dark:from-cyan-500 dark:to-blue-500 dark:opacity-30 sm:-right-[7rem] md:-right-32' />
 			<div className='absolute -left-[40%] top-0 h-full w-[50%] rounded-full bg-gradient-to-r from-white to-black opacity-50 blur-3xl dark:from-cyan-500 dark:to-blue-500 dark:opacity-10 sm:-left-[42%] md:-left-[45%]' />
 			<Container className='flex h-full flex-col items-center justify-center'>
@@ -52,11 +53,12 @@ const Hero = () => {
 							>
 								<AspectRatio ratio={1}>
 									<Image
-										src='/assets/images/avatar.webp'
+										src={avatar}
 										fill
+										placeholder='blur'
 										priority
 										alt='Avatar'
-										className='rounded-lg object-cover grayscale duration-700 group-hover:grayscale-0'
+										className='rounded-lg object-cover shadow-sm shadow-red-600 grayscale duration-700 group-hover:grayscale-0'
 									/>
 								</AspectRatio>
 							</Tilt>
@@ -67,7 +69,7 @@ const Hero = () => {
 			<InfiniteSlider className='absolute bottom-8' gap={24} duration={50} reverse>
 				{TECH_ICONS.map(({ path, alt, className }, index) => (
 					<div key={index} className={cn(className)}>
-						<Image width={32} height={32} src={path} alt={alt} />
+						<Image className='h-8 w-8' width={32} height={32} src={path} alt={alt} />
 					</div>
 				))}
 			</InfiniteSlider>
