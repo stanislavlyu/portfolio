@@ -4,14 +4,14 @@ import { BorderTrail } from '@components/ui/border-trail'
 import { Button } from '@components/ui/button'
 import { cn } from '@lib/utils'
 import React from 'react'
+import { CV_URL } from './constants'
 import { DownloadCVButtonProps } from './types'
 
 const DownloadCVButton = ({ className }: DownloadCVButtonProps) => {
 	const handleDownload = () => {
-		const cvFileUrl = '/files/Stanislav_Lyu_CV.pdf'
 		const link = document.createElement('a')
-		link.href = cvFileUrl
-		link.download = 'Stanislav_Lyu_Frontend_Developer_CV.pdf'
+		link.href = CV_URL
+		link.download = 'CV_Stanislav_Lyu.pdf'
 		link.click()
 	}
 	return (
