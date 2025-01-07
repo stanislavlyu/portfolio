@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.stanislav-lyu.dev
+
+# Sitemaps
+Sitemap: https://www.stanislav-lyu.dev/sitemap.xml

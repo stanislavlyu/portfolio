@@ -39,7 +39,7 @@ export const SLIDES = [
 			alt: 'Seobase mockup',
 		},
 		button: {
-			title: 'View success story',
+			title: 'Explore',
 			href: 'https://seobase.com/en',
 		},
 		backgroundImage: {
@@ -64,7 +64,7 @@ export const SLIDES = [
 			alt: 'Interwetten mockup',
 		},
 		button: {
-			title: 'View success story',
+			title: 'Explore',
 			href: 'https://www.interwetten.com/de/magazin',
 		},
 		backgroundImage: {
