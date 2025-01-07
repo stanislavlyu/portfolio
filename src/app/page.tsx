@@ -5,6 +5,7 @@ import GoogleMap from '@components/GoogleMap'
 import Hero from '@components/Hero'
 import Skills from '@components/Skills'
 import Testimonials from '@components/Testimonials'
+import { GOOGLE_MAPS_API_KEY } from '@utils/constants'
 
 export default function Home() {
 	return (
@@ -15,7 +16,7 @@ export default function Home() {
 			<Experience />
 			<Testimonials />
 			<Contact />
-			<GoogleMap />
+			<GoogleMap apiKey={GOOGLE_MAPS_API_KEY} />
 		</>
 	)
 }

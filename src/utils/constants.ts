@@ -1,6 +1,7 @@
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL as string
 export const METADATA_BASE_URL = process.env.METADATA_BASE_URL as string
 export const DEFAULT_META_IMAGE_URL = 'default_meta_image_6cef7c6aad.jpg'
+export const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY as string
 
 export const FALLBACK_SEO = {
 	title: 'Tarmesh',

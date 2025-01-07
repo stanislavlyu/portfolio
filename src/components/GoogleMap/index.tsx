@@ -1,13 +1,11 @@
-'use client'
-
 import Container from '@components/Container'
 import Footer from '@components/Footer'
 import Section from '@components/Section'
 import Title from '@components/Title'
 import { GoogleMapsEmbed } from '@next/third-parties/google'
-import { GOOGLE_MAPS_API_KEY } from './constants'
+import { GoogleMapProps } from './types'
 
-const GoogleMap = () => {
+const GoogleMap = ({ apiKey }: GoogleMapProps) => {
 	return (
 		<Section id='location' className='!pb-0'>
 			<Container className='mb-4 md:mb-16'>
@@ -17,7 +15,7 @@ const GoogleMap = () => {
 				/>
 			</Container>
 			<GoogleMapsEmbed
-				apiKey={GOOGLE_MAPS_API_KEY}
+				apiKey={apiKey}
 				width='100%'
 				height={450}
 				maptype='satellite'

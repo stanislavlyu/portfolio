@@ -17,4 +17,12 @@ export const CAROUSEL_ITEMS = [
 		position: 'Senior Backend Developer, Kapsys',
 		avatar: '/assets/images/testimonials/vova-avatar.webp',
 	},
+	{
+		id: 3,
+		Logo: <KapsysLogo className='h-[3rem] w-[8rem]' width={128} height={48} />,
+		text: "I've had the pleasure of working alongside Stas at Kapsys for three years, building websites together. His skills as a Frontend Developer are truly remarkable. Stas has an exceptional ability to transform web designs into dynamic, functional websites using frameworks like React and Angular. He's not only highly skilled but also incredibly helpful, easy to collaborate with, and an excellent communicator. As a professional, he values his work deeply, creating a comfortable and productive working environment. Stas excels at translating challenges into creative, visible solutions, consistently adding value to every project and team he works with. He’s a talented developer who can always be trusted to deliver.",
+		name: 'Ada Bardo',
+		position: 'Strapi Developer, Kapsys',
+		avatar: '/assets/images/testimonials/ada-avatar.webp',
+	},
 ]
