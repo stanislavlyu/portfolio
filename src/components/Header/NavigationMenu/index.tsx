@@ -1,9 +1,9 @@
 import { AnimatedBackground } from '@components/ui/animated-background'
 import { Button } from '@components/ui/button'
 import { cn } from '@lib/utils'
+import { NAVIGATION_LIST } from '@utils/types'
 import Link from 'next/link'
 import React from 'react'
-import { TABS } from './constants'
 import { NavigationMenuProps } from './types'
 
 const HeaderNavigationMenu = ({ className }: NavigationMenuProps) => {
@@ -18,7 +18,7 @@ const HeaderNavigationMenu = ({ className }: NavigationMenuProps) => {
 				}}
 				enableHover
 			>
-				{TABS.map(({ id, title, href }) => (
+				{NAVIGATION_LIST.map(({ id, title, href }) => (
 					<Button
 						variant='ghost'
 						key={id}

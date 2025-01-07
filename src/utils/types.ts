@@ -1,16 +1,10 @@
-export enum ComponentName {
-	Hero = 'section.hero-section',
-	Testimonial = 'section.testimonial-section',
-	AboutUs = 'section.about-section',
-	Certificate = 'section.certificate-section',
-	Feature = 'section.feature-section',
-	Blog = 'section.blog-section',
-	BlogList = 'section.blog-page-section',
-	Contact = 'section.contact-section',
-	HeroInner = 'section.inner-hero-section',
-	TextBlocks = 'section.text-blocks-section',
-	Legal = 'section.legals-section',
-}
+export const NAVIGATION_LIST = [
+	{ id: 'case-studies', title: 'Case Studies', href: '#case-studies' },
+	{ id: 'skills', title: 'Skills', href: '#skills' },
+	{ id: 'experience', title: 'Experience', href: '#experience' },
+	{ id: 'testimonials', title: 'Testimonials', href: '#testimonials' },
+	{ id: 'location', title: 'Location', href: '#location' },
+]
 
 export type Picture = {
 	documentId: string

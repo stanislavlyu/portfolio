@@ -1,5 +1,3 @@
-import NavigationMenu from '@components/Header/NavigationMenu'
-import { TABS } from '@components/Header/NavigationMenu/constants'
 import { AnimatedBackground } from '@components/ui/animated-background'
 import { Button } from '@components/ui/button'
 import {
@@ -13,6 +11,7 @@ import {
 	SheetTrigger,
 } from '@components/ui/sheet'
 import { cn } from '@lib/utils'
+import { NAVIGATION_LIST } from '@utils/types'
 import { Menu } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
@@ -40,7 +39,7 @@ const HamburgerMenu = () => {
 						}}
 						enableHover
 					>
-						{TABS.map(({ id, title, href }) => (
+						{NAVIGATION_LIST.map(({ id, title, href }) => (
 							<Button
 								key={id}
 								variant='ghost'
