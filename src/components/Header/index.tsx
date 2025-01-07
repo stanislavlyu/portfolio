@@ -17,7 +17,7 @@ const Header = () => {
 				<div className='flex items-center gap-2'>
 					<HamburgerMenu />
 					<Button className='hidden md:block' asChild>
-						<Link href='#get-in-touch'>Get in Touch</Link>
+						<Link href='#contact'>Contact Me</Link>
 					</Button>
 					{/*<ModeToggle />*/}
 				</div>

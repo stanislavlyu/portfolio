@@ -9,9 +9,9 @@ const ContactInfoList = () => {
 					<Link
 						href={link}
 						target='_blank'
-						className='flex h-max items-center gap-3 text-sm text-gray-300'
+						className='group flex h-max w-max items-center gap-3 text-sm text-gray-300 hover:text-white'
 					>
-						<div className='flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-red-50'>
+						<div className='flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-red-50 group-hover:bg-white'>
 							{Icon}
 						</div>
 						<div className='flex flex-col gap-1'>

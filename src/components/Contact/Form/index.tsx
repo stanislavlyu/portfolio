@@ -5,6 +5,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useToast } from '@hooks/use-toast'
 import { cn } from '@lib/utils'
+import { Send } from 'lucide-react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { defaultValues, FORM_FIELDS, formSchema } from './constants'
@@ -74,7 +75,7 @@ const ContactForm = () => {
 					/>
 				))}
 				<Button disabled={form.formState.isSubmitting} className='col-span-2' type='submit'>
-					Submit
+					<Send /> <span>Send message</span>
 				</Button>
 			</form>
 		</Form>

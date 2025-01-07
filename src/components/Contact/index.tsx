@@ -8,7 +8,7 @@ import ContactInfoList from './InfoList'
 const Contact = () => {
 	return (
 		<>
-			<Section id='get-in-touch'>
+			<Section id='contact'>
 				<Container>
 					<Title
 						variant={TitleVariant.Vertical}

@@ -59,7 +59,7 @@ const HamburgerMenu = () => {
 				<SheetFooter>
 					<SheetClose asChild>
 						<Button className='w-full' asChild>
-							<Link href='#get-in-touch'>Get in touch </Link>
+							<Link href='#contact'>Contact Me</Link>
 						</Button>
 					</SheetClose>
 				</SheetFooter>
