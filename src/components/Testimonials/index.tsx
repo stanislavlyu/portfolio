@@ -25,10 +25,7 @@ const Testimonials = () => {
 				<Carousel className='mt-16'>
 					<CarouselContent className='-ml-4'>
 						{CAROUSEL_ITEMS.map(({ id, text, avatar, Logo, name, position }) => (
-							<CarouselItem
-								key={id}
-								className='basis-full pl-4 md:basis-1/2 lg:basis-1/3'
-							>
+							<CarouselItem key={id} className='basis-full pl-4 md:basis-1/2'>
 								<Card>
 									<CardHeader>
 										<CardTitle className='text-white'>{Logo}</CardTitle>
