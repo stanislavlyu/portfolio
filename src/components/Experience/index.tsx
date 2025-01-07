@@ -42,7 +42,7 @@ const workExperience = [
 		],
 	},
 	{
-		company: 'USENSE',
+		company: 'All American Home Care LLC',
 		role: 'Angular Frontend Developer',
 		duration: '2021 - 2022',
 		responsibilities: [

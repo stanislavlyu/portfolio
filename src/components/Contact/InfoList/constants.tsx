@@ -19,7 +19,7 @@ export const CONTACT_ITEMS = [
 		id: 'linkedin',
 		name: 'LinkedIn',
 		info: 'Stanislav Lyu',
-		link: 'https://www.linkedin.com/in/stanislav-lyu-b92ab61a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+		link: 'www.linkedin.com/in/stanislav-lyu-b92ab61a0',
 		Icon: <Linkedin className='text-red-600' width={32} height={32} />,
 	},
 	{
