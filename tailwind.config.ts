@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
-import { PluginUtils } from 'tailwindcss/types/config'
+import tailwindCssAnimate from 'tailwindcss-animate'
+import { PluginAPI, PluginUtils } from 'tailwindcss/types/config'
 
 export default {
 	darkMode: ['class'],
@@ -96,5 +97,10 @@ export default {
 			},
 		},
 	},
-	plugins: [require('tailwindcss-animate')],
+	plugins: [
+		tailwindCssAnimate,
+		function ({ addUtilities }: { addUtilities: PluginAPI['addUtilities'] }) {
+			addUtilities({})
+		},
+	],
 } satisfies Config
