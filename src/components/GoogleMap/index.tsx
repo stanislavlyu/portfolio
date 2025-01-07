@@ -9,7 +9,7 @@ const GoogleMap = () => {
 			<Container>
 				<Title
 					title="I'm Located in Bali"
-					text='Currently based in the vibrant and serene island of Bali, drawing inspiration from its unique culture and environment while staying connected with the global community for remote collaborations.'
+					text="'Resident of Great Britain and Ukraine, currently based on the vibrant and serene island of Bali. Drawing inspiration from its unique culture and environment while staying connected with the global community for remote collaborations.'"
 				/>
 			</Container>
 			<iframe
