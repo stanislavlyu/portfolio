@@ -18,6 +18,7 @@ const GoogleMap = () => {
 				apiKey={GOOGLE_MAPS_API_KEY}
 				width='100%'
 				height={450}
+				maptype='satellite'
 				mode='place'
 				q='Bali'
 			/>
