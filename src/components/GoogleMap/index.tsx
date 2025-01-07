@@ -1,3 +1,5 @@
+'use client'
+
 import Container from '@components/Container'
 import Footer from '@components/Footer'
 import Section from '@components/Section'
