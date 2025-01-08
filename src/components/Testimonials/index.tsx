@@ -40,6 +40,7 @@ const Testimonials = () => {
 												src={avatar}
 												alt={name}
 												className='h-16 w-16 rounded-full'
+												sizes='64px'
 											/>
 											<AvatarFallback className='flex h-16 w-16 items-center justify-center rounded-full bg-gray-50 text-xl text-black'>
 												{name[0]}
