@@ -10,7 +10,6 @@ import { EXPERIENCE_LIST } from './constants'
 
 const Experience = () => {
 	const [isOpen, setIsOpen] = useState(false)
-
 	return (
 		<Section id='experience' className='py-10 md:py-[7.5rem]'>
 			<div className='container mx-auto px-4'>

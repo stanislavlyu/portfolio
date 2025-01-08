@@ -16,7 +16,7 @@ export default function Home() {
 			<Experience />
 			<Testimonials />
 			<Contact />
-			<GoogleMap apiKey={GOOGLE_MAPS_API_KEY} />
+			{/*<GoogleMap apiKey={GOOGLE_MAPS_API_KEY} />*/}
 		</>
 	)
 }

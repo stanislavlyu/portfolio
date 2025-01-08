@@ -21,6 +21,7 @@ const eslintConfig = [
       '@typescript-eslint/no-explicit-any': 'warn',
       'jsx-a11y/alt-text': 'off',
       'react-hooks/exhaustive-deps': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
     },
   },
 ];
