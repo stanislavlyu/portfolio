@@ -1,4 +1,3 @@
-import Footer from '@components/Footer'
 import Header from '@components/Header'
 import Pattern from '@components/ui/Pattern'
 import { Spotlight } from '@components/ui/spotlight'

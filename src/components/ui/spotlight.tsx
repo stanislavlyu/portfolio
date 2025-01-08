@@ -1,25 +1,20 @@
 'use client'
 
-import { motion, useSpring, useTransform, SpringOptions } from 'motion/react'
+import { motion, useSpring, useTransform } from 'motion/react'
 import React, { useRef, useState, useCallback, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 
 type SpotlightProps = {
 	className?: string
 	size?: number
-	springOptions?: SpringOptions
 }
 
-export function Spotlight({
-	className,
-	size = 200,
-	springOptions = { bounce: 0 },
-}: SpotlightProps) {
+export function Spotlight({ className, size = 200 }: SpotlightProps) {
 	const containerRef = useRef<HTMLDivElement>(null)
 	const [parentElement, setParentElement] = useState<HTMLElement | null>(null)
 
-	const mouseX = useSpring(0, springOptions)
-	const mouseY = useSpring(0, springOptions)
+	const mouseX = useSpring(0, { bounce: 0 })
+	const mouseY = useSpring(0, { bounce: 0 })
 
 	const spotlightLeft = useTransform(mouseX, (x) => `${x - size / 2}px`)
 	const spotlightTop = useTransform(mouseY, (y) => `${y - size / 2}px`)

@@ -73,47 +73,34 @@ const ThreeBackground: React.FC = () => {
 			scene.add(rain)
 
 			const loader = new THREE.TextureLoader()
-			loader.load(
-				'https://static.vecteezy.com/system/resources/previews/010/884/548/original/dense-fluffy-puffs-of-white-smoke-and-fog-on-transparent-background-abstract-smoke-clouds-movement-blurred-out-of-focus-smoking-blows-from-machine-dry-ice-fly-fluttering-in-air-effect-texture-png.png',
-				function (texture) {
-					// @ts-expect-error
-					const cloudGeo = new THREE.PlaneBufferGeometry(500, 500)
-					const cloudMaterial = new THREE.MeshLambertMaterial({
-						map: texture,
-						transparent: true,
-					})
+			loader.load('/assets/images/clouds.png', function (texture) {
+				// @ts-ignore
+				const cloudGeo = new THREE.PlaneBufferGeometry(500, 500)
+				const cloudMaterial = new THREE.MeshLambertMaterial({
+					map: texture,
+					transparent: true,
+				})
 
-					for (let p = 0; p < 25; p++) {
-						const cloud = new THREE.Mesh(cloudGeo, cloudMaterial)
-						cloud.position.set(
-							Math.random() * 800 - 400,
-							500,
-							Math.random() * 500 - 450
-						)
-						cloud.rotation.x = 1.16
-						cloud.rotation.y = -0.12
-						cloud.rotation.z = Math.random() * 360
-						cloud.material.opacity = 0.6
-						cloudParticles.push(cloud)
-						scene.add(cloud)
-					}
-					animate()
-					window.addEventListener('resize', onWindowResize)
+				for (let p = 0; p < 25; p++) {
+					const cloud = new THREE.Mesh(cloudGeo, cloudMaterial)
+					cloud.position.set(Math.random() * 800 - 400, 500, Math.random() * 500 - 450)
+					cloud.rotation.x = 1.16
+					cloud.rotation.y = -0.12
+					cloud.rotation.z = Math.random() * 360
+					cloud.material.opacity = 0.6
+					cloudParticles.push(cloud)
+					scene.add(cloud)
 				}
-			)
+				animate()
+				window.addEventListener('resize', onWindowResize)
+			})
 		}
 
 		function animate() {
 			cloudParticles.forEach((p) => {
 				p.rotation.z -= 0.002
 			})
-			rainGeo.attributes.size.array.forEach((r, i) => {
-				r += 0.3
-			})
-			const time = Date.now() * 0.005
 
-			// @ts-ignore
-			rainGeo.verticesNeedUpdate = true
 			rain.position.z -= 0.222
 			if (rain.position.z < -200) {
 				rain.position.z = 0
