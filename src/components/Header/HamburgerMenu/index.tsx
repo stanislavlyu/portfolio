@@ -21,6 +21,7 @@ const HamburgerMenu = () => {
 		<Sheet>
 			<SheetTrigger className='md:hidden' asChild>
 				<Button className='h-10 w-10 p-0' variant='outline'>
+					<span className='sr-only'>Open navigation menu</span>
 					<Menu className='data-[state=closed]:hidden' width={16} height={16} />
 				</Button>
 			</SheetTrigger>
