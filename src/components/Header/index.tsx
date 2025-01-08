@@ -16,7 +16,7 @@ const Header = () => {
 				</div>
 				<div className='flex items-center gap-2'>
 					<HamburgerMenu />
-					<Button className='hidden md:block' asChild>
+					<Button className='hidden md:flex' asChild>
 						<Link href='#contact'>Contact Me</Link>
 					</Button>
 					{/*<ModeToggle />*/}
