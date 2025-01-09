@@ -10,7 +10,7 @@ import { SKILL_LIST, TECH_ICONS } from './constants'
 
 const Hero = () => {
 	return (
-		<section className='bg-dark-overlay relative h-screen snap-center overflow-x-hidden md:min-h-[46rem]'>
+		<section className='bg-dark-overlay relative h-svh snap-center overflow-x-hidden md:min-h-[46rem]'>
 			<ThreeBackground />
 			<Container className='flex h-full flex-col items-center justify-center'>
 				<div className='flex h-full w-full max-w-[35rem] flex-col items-center justify-center gap-2 text-center text-black dark:text-white md:order-1'>
