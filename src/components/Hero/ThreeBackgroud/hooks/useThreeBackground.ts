@@ -122,5 +122,5 @@ export const useThreeBackground = (containerRef: React.RefObject<HTMLDivElement 
 		return () => {
 			window.removeEventListener('resize', onWindowResize)
 		}
-	}, [containerRef])
+	}, [])
 }
