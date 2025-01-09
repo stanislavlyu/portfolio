@@ -4,7 +4,7 @@ export const useThreeBackground = (containerRef: React.RefObject<HTMLDivElement 
 	useEffect(() => {
 		let scene: any, camera: any, renderer: any, rain: any, flash: any
 		const cloudParticles: any[] = []
-		const rainCount = 12000
+		const rainCount = 5000
 
 		async function loadThreeAndInit() {
 			const {
@@ -26,7 +26,6 @@ export const useThreeBackground = (containerRef: React.RefObject<HTMLDivElement 
 				FogExp2,
 			} = await import('three')
 
-			// Initialize scene, camera, and renderer
 			scene = new Scene()
 			camera = new PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000)
 			camera.position.z = 1
@@ -34,7 +33,6 @@ export const useThreeBackground = (containerRef: React.RefObject<HTMLDivElement 
 			camera.rotation.y = -0.12
 			camera.rotation.z = 0.27
 
-			// Lights
 			scene.add(new AmbientLight(0x555555))
 
 			const directionalLight = new DirectionalLight(0xffeedd)
@@ -44,14 +42,12 @@ export const useThreeBackground = (containerRef: React.RefObject<HTMLDivElement 
 			flash = new PointLight(0x062d89, 30, 500, 1.7)
 			scene.add(flash)
 
-			// Renderer
 			renderer = new WebGLRenderer()
 			scene.fog = new FogExp2(0x11111f, 0.002)
 			renderer.setClearColor(scene.fog.color)
 			renderer.setSize(window.innerWidth, window.innerHeight)
 			containerRef.current?.appendChild(renderer.domElement)
 
-			// Rain particles
 			const positions: number[] = []
 			const rainGeo = new BufferGeometry()
 			for (let i = 0; i < rainCount; i++) {
@@ -97,7 +93,6 @@ export const useThreeBackground = (containerRef: React.RefObject<HTMLDivElement 
 		function animate() {
 			cloudParticles.forEach((p) => (p.rotation.z -= 0.002))
 
-			// Adjust rain drop speed
 			rain.position.z -= 0.7
 			if (rain.position.z < -200) rain.position.z = 0
 
