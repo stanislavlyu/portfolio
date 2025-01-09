@@ -11,6 +11,7 @@ import {
 	CarouselNavigation,
 } from '@components/ui/carousel'
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
+import Image from 'next/image'
 import React from 'react'
 import { CAROUSEL_ITEMS } from './constants'
 
@@ -32,20 +33,13 @@ const Testimonials = () => {
 										<CardDescription className='!mt-8'>{text}</CardDescription>
 									</CardHeader>
 									<CardFooter className='mt-6 flex gap-4'>
-										<Avatar className='h-16 w-16'>
-											<AvatarImage
-												loading='lazy'
-												width={64}
-												height={64}
-												src={avatar}
-												alt={name}
-												className='h-16 w-16 rounded-full'
-												sizes='64px'
-											/>
-											<AvatarFallback className='flex h-16 w-16 items-center justify-center rounded-full bg-gray-50 text-xl text-black'>
-												{name[0]}
-											</AvatarFallback>
-										</Avatar>
+										<Image
+											width={64}
+											height={64}
+											src={avatar}
+											alt={name}
+											className='h-16 w-16 rounded-full'
+										/>
 										<div className='flex flex-col gap-1'>
 											<span className='text-xl font-semibold text-gray-200'>
 												{name}
