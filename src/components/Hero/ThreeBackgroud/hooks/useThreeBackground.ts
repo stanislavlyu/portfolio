@@ -4,7 +4,7 @@ export const useThreeBackground = (containerRef: React.RefObject<HTMLDivElement 
 	useEffect(() => {
 		let scene: any, camera: any, renderer: any, rain: any, flash: any
 		const cloudParticles: any[] = []
-		const rainCount = 15000
+		const rainCount = 12000
 
 		async function loadThreeAndInit() {
 			const {
