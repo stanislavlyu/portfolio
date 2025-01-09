@@ -82,7 +82,7 @@ const ThreeBackground: React.FC = () => {
 			scene.add(rain)
 
 			const loader = new TextureLoader()
-			loader.load('/assets/images/clouds.png', function (texture) {
+			loader.load('/assets/images/clouds.webp', function (texture) {
 				const cloudGeo = new PlaneBufferGeometry(500, 500)
 				const cloudMaterial = new MeshLambertMaterial({
 					map: texture,
@@ -137,20 +137,7 @@ const ThreeBackground: React.FC = () => {
 		}
 	}, [])
 
-	return (
-		<div
-			ref={containerRef}
-			id='three-background'
-			style={{
-				position: 'absolute',
-				top: 0,
-				left: 0,
-				width: '100%',
-				height: '100%',
-				zIndex: -1,
-			}}
-		/>
-	)
+	return <div ref={containerRef} className='absolute left-0 top-0 -z-[1] h-full w-full' />
 }
 
 export default ThreeBackground
