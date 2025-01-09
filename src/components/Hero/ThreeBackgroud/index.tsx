@@ -1,57 +1,69 @@
 'use client'
 
-import * as THREE from 'three'
+import {
+	AmbientLight,
+	BufferAttribute,
+	BufferGeometry,
+	DirectionalLight,
+	FogExp2,
+	Mesh,
+	MeshLambertMaterial,
+	PerspectiveCamera,
+	PlaneBufferGeometry,
+	PointLight,
+	Points,
+	PointsMaterial,
+	Scene,
+	TextureLoader,
+	Vector3,
+	WebGLRenderer,
+} from 'three'
 import React, { useEffect, useRef } from 'react'
 
 const ThreeBackground: React.FC = () => {
 	const containerRef = useRef<HTMLDivElement | null>(null)
 
 	useEffect(() => {
-		let scene: THREE.Scene,
-			camera: THREE.PerspectiveCamera,
-			renderer: THREE.WebGLRenderer,
-			rain: THREE.Points,
-			rainGeo: THREE.BufferGeometry,
-			flash: THREE.PointLight
+		let scene: Scene,
+			camera: PerspectiveCamera,
+			renderer: WebGLRenderer,
+			rain: Points,
+			rainGeo: BufferGeometry,
+			flash: PointLight
 
-		const cloudParticles: THREE.Mesh[] = [],
+		const cloudParticles: Mesh[] = [],
 			rainCount = 15000
 
 		function init() {
-			scene = new THREE.Scene()
-			camera = new THREE.PerspectiveCamera(
-				60,
-				window.innerWidth / window.innerHeight,
-				1,
-				1000
-			)
+			scene = new Scene()
+			camera = new PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000)
 			camera.position.z = 1
 			camera.rotation.x = 1.16
 			camera.rotation.y = -0.12
 			camera.rotation.z = 0.27
 
-			const ambient = new THREE.AmbientLight(0x555555)
+			const ambient = new AmbientLight(0x555555)
 			scene.add(ambient)
 
-			const directionalLight = new THREE.DirectionalLight(0xffeedd)
+			const directionalLight = new DirectionalLight(0xffeedd)
 			directionalLight.position.set(0, 0, 1)
 			scene.add(directionalLight)
 
-			flash = new THREE.PointLight(0x062d89, 30, 500, 1.7)
+			flash = new PointLight(0x062d89, 30, 500, 1.7)
 			flash.position.set(200, 300, 100)
 			scene.add(flash)
 
-			renderer = new THREE.WebGLRenderer()
-			scene.fog = new THREE.FogExp2(0x11111f, 0.002)
+			renderer = new WebGLRenderer()
+			scene.fog = new FogExp2(0x11111f, 0.002)
 			renderer.setClearColor(scene.fog.color)
 			renderer.setSize(window.innerWidth, window.innerHeight)
 			containerRef.current?.appendChild(renderer.domElement)
 
 			const positions: number[] = []
 			const sizes: number[] = []
-			rainGeo = new THREE.BufferGeometry()
+			rainGeo = new BufferGeometry()
 			for (let i = 0; i < rainCount; i++) {
-				const rainDrop = new THREE.Vector3(
+				const rainDrop = new Vector3(
 					Math.random() * 400 - 200,
 					Math.random() * 500 - 250,
 					Math.random() * 400 - 200
@@ -59,30 +71,26 @@ const ThreeBackground: React.FC = () => {
 				positions.push(rainDrop.x, rainDrop.y, rainDrop.z)
 				sizes.push(30)
 			}
-			rainGeo.setAttribute(
-				'position',
-				new THREE.BufferAttribute(new Float32Array(positions), 3)
-			)
-			rainGeo.setAttribute('size', new THREE.BufferAttribute(new Float32Array(sizes), 1))
-			const rainMaterial = new THREE.PointsMaterial({
+			rainGeo.setAttribute('position', new BufferAttribute(new Float32Array(positions), 3))
+			rainGeo.setAttribute('size', new BufferAttribute(new Float32Array(sizes), 1))
+			const rainMaterial = new PointsMaterial({
 				color: 0xaaaaaa,
 				size: 0.1,
 				transparent: true,
 			})
-			rain = new THREE.Points(rainGeo, rainMaterial)
+			rain = new Points(rainGeo, rainMaterial)
 			scene.add(rain)
 
-			const loader = new THREE.TextureLoader()
+			const loader = new TextureLoader()
 			loader.load('/assets/images/clouds.png', function (texture) {
-				// @ts-ignore
-				const cloudGeo = new THREE.PlaneBufferGeometry(500, 500)
-				const cloudMaterial = new THREE.MeshLambertMaterial({
+				const cloudGeo = new PlaneBufferGeometry(500, 500)
+				const cloudMaterial = new MeshLambertMaterial({
 					map: texture,
 					transparent: true,
 				})
 
 				for (let p = 0; p < 25; p++) {
-					const cloud = new THREE.Mesh(cloudGeo, cloudMaterial)
+					const cloud = new Mesh(cloudGeo, cloudMaterial)
 					cloud.position.set(Math.random() * 800 - 400, 500, Math.random() * 500 - 450)
 					cloud.rotation.x = 1.16
 					cloud.rotation.y = -0.12
