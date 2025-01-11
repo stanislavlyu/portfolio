@@ -1,6 +1,5 @@
 import Container from '@components/Container'
 import DownloadCVButton from '@components/Hero/DownloadCVButton'
-import ThreeBackground from '@components/Hero/ThreeBackgroud'
 import { InfiniteSlider } from '@components/ui/infinite-slider'
 import { TextLoop } from '@components/ui/text-loop'
 import { TextShimmer } from '@components/ui/text-shimmer'
@@ -11,7 +10,6 @@ import { SKILL_LIST, TECH_ICONS } from './constants'
 const Hero = () => {
 	return (
 		<section className='bg-dark-overlay relative h-svh snap-center overflow-x-hidden md:min-h-[46rem]'>
-			<ThreeBackground />
 			<Container className='flex h-full flex-col items-center justify-center'>
 				<div className='flex h-full w-full max-w-[35rem] flex-col items-center justify-center gap-2 text-center text-black dark:text-white md:order-1'>
 					<h1 className='text-4xl font-semibold md:text-5xl lg:text-6xl xl:text-7xl'>
