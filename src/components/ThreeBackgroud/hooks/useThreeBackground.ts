@@ -5,8 +5,9 @@ export const useThreeBackground = (containerRef: React.RefObject<HTMLDivElement 
 		let scene: any, camera: any, renderer: any, rain: any, flash: any
 		const cloudParticles: any[] = []
 		const rainCount = 5000
+		let initialized = false
 
-		async function loadThreeAndInit() {
+		const initThree = async () => {
 			const {
 				Scene,
 				PerspectiveCamera,
@@ -113,9 +114,26 @@ export const useThreeBackground = (containerRef: React.RefObject<HTMLDivElement 
 			renderer.setSize(window.innerWidth, window.innerHeight)
 		}
 
-		loadThreeAndInit()
+		function initialize() {
+			if (!initialized) {
+				initialized = true
+				initThree()
+			}
+		}
+
+		// Listen for user interactions
+		const interactionEvents = ['click', 'mousemove', 'scroll', 'keydown']
+		interactionEvents.forEach((event) =>
+			window.addEventListener(event, initialize, { once: true })
+		)
+
+		// Initialize after 5 seconds if no interaction occurs
+		const timer = setTimeout(initialize, 5000)
+
 		return () => {
+			interactionEvents.forEach((event) => window.removeEventListener(event, initialize))
+			clearTimeout(timer)
 			window.removeEventListener('resize', onWindowResize)
 		}
-	}, [])
+	}, [containerRef])
 }
