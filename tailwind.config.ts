@@ -21,6 +21,7 @@ export default {
 			}),
 			fontFamily: {
 				inter: 'var(--font-inter)',
+				firaCode: 'var(--font-fira-code)',
 			},
 			colors: {
 				background: 'hsl(var(--background))',

@@ -1,12 +1,12 @@
 import Header from '@components/Header'
-import ThreeBackground from '@components/Hero/ThreeBackgroud'
 import { Spotlight } from '@components/ui/spotlight'
 import { Toaster } from '@components/ui/toaster'
-import { inter } from '@fonts/fonts'
+import { inter, firaCode } from '@fonts/fonts'
 import { cn } from '@lib/utils'
 import { ThemeProvider } from '@providers/theme-provider'
 import type { Metadata } from 'next'
-import React from 'react'
+import React, { Suspense } from 'react'
+import ThreeBackground from '../components/ThreeBackgroud'
 import './globals.css'
 import { RootLayoutProps } from './types'
 
@@ -19,8 +19,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang='en' suppressHydrationWarning>
-			<body className={cn('min-h-screen', inter.variable)}>
-				<ThreeBackground />
+			<body className={cn('min-h-screen', inter.variable, firaCode.variable)}>
+				<Suspense fallback={null}>
+					<ThreeBackground />
+				</Suspense>
 				<Spotlight
 					className='z-0 from-white via-gray-600 to-black blur-xl dark:from-blue-900 dark:via-blue-700 dark:to-blue-900'
 					size={64}

@@ -4,6 +4,7 @@ import Logo from '@components/Logo'
 import { Button } from '@components/ui/button'
 import Link from 'next/link'
 import React from 'react'
+import ContactButton from './ContactButton'
 import HeaderNavigationMenu from './NavigationMenu'
 
 const Header = () => {
@@ -16,9 +17,7 @@ const Header = () => {
 				</div>
 				<div className='flex items-center gap-2'>
 					<HamburgerMenu />
-					<Button className='hidden md:flex' asChild>
-						<Link href='#contact'>Contact Me</Link>
-					</Button>
+					<ContactButton />
 					{/*<ModeToggle />*/}
 				</div>
 			</Container>

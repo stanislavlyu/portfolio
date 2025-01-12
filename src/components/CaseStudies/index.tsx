@@ -80,7 +80,7 @@ const CaseStudies = () => {
 														variant={
 															variant === SlideVariant.Black
 																? 'secondary'
-																: 'default'
+																: 'white'
 														}
 														asChild
 													>

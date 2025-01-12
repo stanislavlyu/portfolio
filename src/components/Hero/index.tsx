@@ -1,5 +1,6 @@
 import Container from '@components/Container'
 import DownloadCVButton from '@components/Hero/DownloadCVButton'
+import Section from '@components/Section'
 import { InfiniteSlider } from '@components/ui/infinite-slider'
 import { TextLoop } from '@components/ui/text-loop'
 import { TextShimmer } from '@components/ui/text-shimmer'
@@ -9,20 +10,25 @@ import { SKILL_LIST, TECH_ICONS } from './constants'
 
 const Hero = () => {
 	return (
-		<section className='bg-dark-overlay relative h-svh snap-center overflow-x-hidden md:min-h-[46rem]'>
-			<Container className='flex h-full flex-col items-center justify-center'>
-				<div className='flex h-full w-full max-w-[35rem] flex-col items-center justify-center gap-2 text-center text-black dark:text-white md:order-1'>
-					<h1 className='text-4xl font-semibold md:text-5xl lg:text-6xl xl:text-7xl'>
-						<span>Hi there, I am</span>{' '}
+		<Section id='hero' className='bg-dark-overlay py-0 md:min-h-[46rem] md:py-0 lg:py-0'>
+			<Container className='flex h-svh flex-col items-center justify-center'>
+				<div className='flex h-full w-full flex-col items-center justify-center gap-2 text-center text-black dark:text-white md:order-1'>
+					<h1 className='text-[2rem] font-semibold leading-[2.5rem] md:text-[4rem] md:leading-[4.5rem]'>
+						<span>
+							Hi there,
+							<br />I am
+						</span>{' '}
 						<TextShimmer
 							duration={3}
-							className='[--base-color:theme(colors.red.700)] [--base-gradient-color:theme(colors.red.200)] dark:[--base-color:theme(colors.red.800)] dark:[--base-gradient-color:theme(colors.red.400)]'
+							className='[--base-color:theme(colors.red.700)] [--base-gradient-color:theme(colors.red.200)] dark:[--base-color:theme(colors.red.700)] dark:[--base-gradient-color:theme(colors.red.400)]'
 						>
 							Stanislav Lyu!
 						</TextShimmer>
 					</h1>
 					<div className='my-2 text-lg sm:text-xl lg:my-6 lg:text-3xl'>
-						I am Experienced front-end developer with 5+ years of expertise in{' '}
+						Experienced front-end developer
+						<br />
+						with 5+ years of expertise in{' '}
 						<TextLoop className='font-semibold text-red-700'>{SKILL_LIST}</TextLoop>
 					</div>
 					<DownloadCVButton className='relative mt-2 flex w-max flex-col gap-4 rounded sm:flex-row lg:mt-4' />
@@ -39,7 +45,7 @@ const Hero = () => {
 					</div>
 				))}
 			</InfiniteSlider>
-		</section>
+		</Section>
 	)
 }
 

@@ -1,5 +1,4 @@
-'use client'
-
+import { TextEffect } from '@components/ui/text-effect'
 import { TextShimmer } from '@components/ui/text-shimmer'
 import { cn } from '@lib/utils'
 import { Code, CodeXml } from 'lucide-react'
@@ -17,26 +16,27 @@ const Title = ({ variant = TitleVariant.Horizontal, className, title, text }: Ti
 				className
 			)}
 		>
-			<h2 className='text-center text-[3rem] font-bold capitalize leading-[3.5rem]'>
+			<h2 className='text-center text-[2rem] font-bold capitalize leading-10 md:text-[2.5rem] md:leading-[3rem]'>
 				<TextShimmer
 					duration={3}
-					className='[--base-color:theme(colors.red.700)] [--base-gradient-color:theme(colors.red.200)] dark:[--base-color:theme(colors.red.800)] dark:[--base-gradient-color:theme(colors.red.400)]'
+					className='[--base-color:theme(colors.red.700)] [--base-gradient-color:theme(colors.red.200)] dark:[--base-color:theme(colors.red.700)] dark:[--base-gradient-color:theme(colors.red.400)]'
 				>
 					{title}
 				</TextShimmer>
 			</h2>
 			{text && (
-				<p
+				<div
 					className={cn(
-						'max-w-[30rem] text-center text-base text-black dark:text-gray-300 md:text-right',
+						'font-firaCode max-w-[30rem] text-center text-base text-black dark:text-gray-300 md:text-right',
 						{
 							'text-center': variant === TitleVariant.Vertical,
 						}
 					)}
 				>
-					<Code width={16} height={16} className='inline' /> {text}{' '}
+					<Code width={16} height={16} className='inline' />
+					{text}
 					<CodeXml width={16} height={16} className='inline' />
-				</p>
+				</div>
 			)}
 		</div>
 	)
