@@ -46,7 +46,6 @@
     "react-hook-form": "^7.54.2",
     "react-phone-number-input": "^3.4.10",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7",
     "three": "^0.135.0",
     "zod": "^3.24.1",
     "zustand": "^5.0.3"
@@ -69,6 +68,7 @@
     "prettier-plugin-tailwindcss": "^0.6.9",
     "react-use-measure": "^2.1.1",
     "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5"
   }
 }

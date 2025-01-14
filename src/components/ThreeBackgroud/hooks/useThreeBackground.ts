@@ -121,13 +121,11 @@ export const useThreeBackground = (containerRef: React.RefObject<HTMLDivElement 
 			}
 		}
 
-		// Listen for user interactions
 		const interactionEvents = ['click', 'mousemove', 'scroll', 'keydown']
 		interactionEvents.forEach((event) =>
 			window.addEventListener(event, initialize, { once: true })
 		)
 
-		// Initialize after 5 seconds if no interaction occurs
 		const timer = setTimeout(initialize, 5000)
 
 		return () => {
