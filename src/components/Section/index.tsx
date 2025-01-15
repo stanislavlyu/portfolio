@@ -4,6 +4,7 @@ import { InView } from '@components/ui/in-view'
 import { cn } from '@lib/utils'
 import { useInView } from 'motion/react'
 import React, { useEffect, useRef } from 'react'
+import { viewOptions } from './constants'
 import useSection from './hooks/useSection'
 import { SectionType } from './store/types'
 import { SectionProps } from './types'
@@ -11,7 +12,7 @@ import { SectionProps } from './types'
 const Section = ({ id, children, className }: SectionProps) => {
 	const ref = useRef<HTMLDivElement>(null)
 	const { setSectionType } = useSection()
-	const inView = useInView(ref, { margin: '-200px 0px -200px 0px' })
+	const inView = useInView(ref, viewOptions)
 
 	useEffect(() => {
 		if (inView) {
@@ -23,18 +24,15 @@ const Section = ({ id, children, className }: SectionProps) => {
 		<section
 			ref={ref}
 			id={id}
-			className={cn(
-				'relative snap-center snap-always overflow-hidden py-10 md:py-20 lg:py-[10rem]',
-				className
-			)}
+			className={cn('relative overflow-hidden py-10 md:py-20 lg:py-[7.5rem]', className)}
 		>
 			<InView
 				variants={{
 					hidden: { opacity: 0, y: -100, filter: 'blur(8px)' },
 					visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
 				}}
-				viewOptions={{ margin: '-200px 0px -200px 0px' }}
-				transition={{ duration: 0.5, ease: 'easeInOut' }}
+				viewOptions={{ ...viewOptions, once: true }}
+				transition={{ duration: 0.75, ease: 'easeInOut' }}
 			>
 				{children}
 			</InView>

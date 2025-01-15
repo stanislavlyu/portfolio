@@ -1,8 +1,6 @@
 import Container from '@components/Container'
 import HamburgerMenu from '@components/Header/HamburgerMenu'
 import Logo from '@components/Logo'
-import { Button } from '@components/ui/button'
-import Link from 'next/link'
 import React from 'react'
 import ContactButton from './ContactButton'
 import HeaderNavigationMenu from './NavigationMenu'
