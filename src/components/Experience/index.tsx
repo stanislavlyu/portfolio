@@ -36,7 +36,7 @@ const Experience = () => {
 					{EXPERIENCE_LIST.map((job, index) => (
 						<Card
 							key={index}
-							className='rounded-lg shadow-md transition duration-300 hover:shadow-lg'
+							className='rounded-lg bg-black/50 shadow-md transition duration-300 hover:shadow-lg'
 						>
 							<CardHeader>
 								<CardTitle className='text-xl font-semibold'>{job.role}</CardTitle>

@@ -4,7 +4,7 @@ import React from 'react'
 
 const HeroDescription = () => {
 	return (
-		<div className='my-2 text-lg sm:text-xl lg:my-6 lg:text-3xl'>
+		<div className='my-2 text-lg sm:text-xl lg:my-6 lg:text-2xl'>
 			Experienced front-end developer
 			<br />
 			with 5+ years of expertise in{' '}

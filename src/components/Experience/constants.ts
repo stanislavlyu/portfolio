@@ -1,5 +1,6 @@
 export const EXPERIENCE_LIST = [
 	{
+		logo: 'https://assets.maccarianagency.com/svg/logos/slack.svg',
 		company: 'Kapsys Pages',
 		role: 'Frontend Developer',
 		duration: '2023 - Present',
@@ -10,6 +11,7 @@ export const EXPERIENCE_LIST = [
 		],
 	},
 	{
+		logo: 'https://assets.maccarianagency.com/svg/logos/slack.svg',
 		company: 'Interwetten',
 		role: 'Software Engineer',
 		duration: '2024',
@@ -22,6 +24,7 @@ export const EXPERIENCE_LIST = [
 		],
 	},
 	{
+		logo: 'https://assets.maccarianagency.com/svg/logos/slack.svg',
 		company: 'Seobase',
 		role: 'Frontend Developer',
 		duration: '2022 - 2024',
@@ -37,6 +40,7 @@ export const EXPERIENCE_LIST = [
 		],
 	},
 	{
+		logo: 'https://assets.maccarianagency.com/svg/logos/slack.svg',
 		company: 'All American Home Care LLC',
 		role: 'Angular Frontend Developer',
 		duration: '2021 - 2022',

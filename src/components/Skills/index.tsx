@@ -16,10 +16,10 @@ const Skills = () => {
 					text='A comprehensive showcase of technical expertise and interpersonal abilities, highlighting the tools, technologies, and soft skills that contribute to professional success and effective collaboration.'
 				/>
 				<div className='mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 xl:gap-20'>
-					{ITEMS.map(({ subtitle, skills }) => (
-						<div key={subtitle} className='py-2'>
-							<h3 className='mb-2 font-medium text-zinc-800 dark:text-zinc-100'>
-								{subtitle}
+					{ITEMS.map(({ title, skills }) => (
+						<div key={title} className='py-2'>
+							<h3 className='mb-8 max-w-[20rem] font-medium text-zinc-800 dark:text-zinc-100'>
+								{title}
 							</h3>
 							{<SkillsList skillsList={skills} />}
 						</div>
