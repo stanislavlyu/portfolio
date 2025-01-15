@@ -12,7 +12,7 @@ export const renderInputComponent = (
 		case 'textarea':
 			return (
 				<Textarea
-					className='min-h-40 bg-black/50'
+					className='min-h-40 resize-none bg-black/50'
 					placeholder={placeholder}
 					{...field}
 					value={field.value as string}

@@ -7,8 +7,8 @@ export const formSchema = z.object({
 	email: z.string().email({
 		message: 'Email is not valid.',
 	}),
-	message: z.string().min(20, {
-		message: 'Message must be at least 20 characters.',
+	message: z.string().min(5, {
+		message: 'Message must be at least 5 characters.',
 	}),
 })
 

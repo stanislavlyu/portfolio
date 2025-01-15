@@ -1,12 +1,8 @@
 import Container from '@components/Container'
-import HeroAvatar from '@components/Hero/Avatar'
-import DigitalRain from '@components/Hero/DigitalRain'
 import Section from '@components/Section'
 import { InfiniteSlider } from '@components/ui/infinite-slider'
-import { TransitionPanel } from '@components/ui/transition-panel'
 import Image from 'next/image'
 import React from 'react'
-import codeImage from '../../../public/assets/images/code.png'
 import Description from './Description'
 import DownloadCVButton from './DownloadCVButton'
 import Title from './Title'
@@ -21,8 +17,6 @@ const Hero = () => {
 					<Description />
 					<DownloadCVButton className='relative mt-2 flex w-max flex-col gap-4 rounded sm:flex-row lg:mt-4' />
 				</div>
-				{/*<Image src={codeImage} alt='code' />*/}
-				{/*<HeroAvatar />*/}
 			</Container>
 			<InfiniteSlider className='absolute bottom-6 z-10' gap={24} duration={50} reverse>
 				{TECH_ICONS.map(({ title, icon, alt }, index) => (
