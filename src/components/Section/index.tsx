@@ -2,6 +2,7 @@
 
 import { InView } from '@components/ui/in-view'
 import { cn } from '@lib/utils'
+import { SectionType } from '@utils/types'
 import { useInView } from 'motion/react'
 import React, { useEffect, useRef } from 'react'
 import useSection from './hooks/useSection'
@@ -9,12 +10,12 @@ import { SectionProps } from './types'
 
 const Section = ({ id, children, className, enableAnimation = true }: SectionProps) => {
 	const ref = useRef<HTMLDivElement>(null)
-	const { setSectionType, sectionType } = useSection()
+	const { setSectionType } = useSection()
 	const inView = useInView(ref, { once: false })
 
 	useEffect(() => {
 		if (inView) {
-			setSectionType(id)
+			setSectionType(scrollY === 0 ? SectionType.Hero : id)
 		}
 	}, [inView])
 	return (
