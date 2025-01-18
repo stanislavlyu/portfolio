@@ -3,7 +3,7 @@ import Logo from '@components/Logo'
 import dynamic from 'next/dynamic'
 import React from 'react'
 import ContactButton from './ContactButton'
-import HeaderNavigationMenu from './NavigationMenu'
+import NavigationMenu from './NavigationMenu'
 
 const HamburgerMenu = dynamic(() => import('./HamburgerMenu'))
 
@@ -13,7 +13,7 @@ const Header = () => {
 			<Container className='flex items-center justify-between'>
 				<div className='flex items-center gap-4'>
 					<Logo />
-					<HeaderNavigationMenu className='hidden flex-row md:flex' />
+					<NavigationMenu className='hidden flex-row md:flex' />
 				</div>
 				<div className='flex items-center gap-2'>
 					<HamburgerMenu />
