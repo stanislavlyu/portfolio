@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 import tailwindCssAnimate from 'tailwindcss-animate'
-import { PluginAPI, PluginUtils } from 'tailwindcss/types/config'
+import { PluginAPI } from 'tailwindcss/types/config'
 
 export default {
 	darkMode: ['class'],
@@ -11,14 +11,6 @@ export default {
 	],
 	theme: {
 		extend: {
-			typography: ({ theme }: PluginUtils) => ({
-				gray: {
-					css: {
-						'--tw-prose-body': theme('colors.gray[600]'),
-						'--tw-prose-headings': theme('colors.gray[800]'),
-					},
-				},
-			}),
 			fontFamily: {
 				inter: 'var(--font-inter)',
 				firaCode: 'var(--font-fira-code)',
