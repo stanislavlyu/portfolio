@@ -5,6 +5,7 @@ import Section from '@components/Section'
 import Title from '@components/Title'
 import { Button } from '@components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@components/ui/card'
+import { SectionType } from '@utils/types'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
@@ -21,7 +22,7 @@ const Experience = () => {
 		setIsOpen(!isOpen)
 	}
 	return (
-		<Section id='experience' className='py-10'>
+		<Section id={SectionType.Experience} className='py-10'>
 			<Container>
 				<Title
 					title='Work Experience'

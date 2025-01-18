@@ -1,9 +1,17 @@
+export enum SectionType {
+	Hero = 'hero',
+	CaseStudies = 'caseStudies',
+	Skills = 'skills',
+	Experience = 'experience',
+	Testimonials = 'testimonials',
+	Contact = 'contact',
+}
+
 export const NAVIGATION_LIST = [
-	{ id: 'case-studies', title: 'Case Studies', href: '#case-studies' },
-	{ id: 'skills', title: 'Skills', href: '#skills' },
-	{ id: 'experience', title: 'Experience', href: '#experience' },
-	{ id: 'testimonials', title: 'Testimonials', href: '#testimonials' },
-	{ id: 'location', title: 'Location', href: '#location' },
+	{ id: SectionType.CaseStudies, title: 'Case Studies' },
+	{ id: SectionType.Skills, title: 'Skills' },
+	{ id: SectionType.Experience, title: 'Experience' },
+	{ id: SectionType.Testimonials, title: 'Testimonials' },
 ]
 
 export type Picture = {

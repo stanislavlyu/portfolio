@@ -1,9 +1,9 @@
 'use client'
 
 import useSection from '@components/Section/hooks/useSection'
-import { SectionType } from '@components/Section/store/types'
 import { Button } from '@components/ui/button'
 import { cn } from '@lib/utils'
+import { SectionType } from '@utils/types'
 import Link from 'next/link'
 import React from 'react'
 

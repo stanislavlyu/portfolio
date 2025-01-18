@@ -3,12 +3,13 @@ import Section from '@components/Section'
 import SkillsList from '@components/Skills/List'
 import Title from '@components/Title'
 import { TitleVariant } from '@components/Title/types'
+import { SectionType } from '@utils/types'
 import React from 'react'
 import { ITEMS } from './constants'
 
 const Skills = () => {
 	return (
-		<Section id='skills'>
+		<Section id={SectionType.Skills}>
 			<Container>
 				<Title
 					variant={TitleVariant.Vertical}

@@ -1,5 +1,6 @@
+import { SectionType } from '@utils/types'
 import { create } from 'zustand'
-import { SectionStoreProps, SectionType } from './types'
+import { SectionStoreProps } from './types'
 
 const DEFAULT_VALUES = {
 	sectionType: SectionType.Hero,

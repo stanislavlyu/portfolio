@@ -3,9 +3,8 @@
 import { Button } from '@components/ui/button'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@components/ui/form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useToast } from '@hooks/use-toast'
 import { cn } from '@lib/utils'
-import { Send } from 'lucide-react'
+import { LoaderCircle, Send } from 'lucide-react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { defaultValues, FORM_FIELDS, formSchema } from './constants'
@@ -13,14 +12,15 @@ import { renderInputComponent } from './helpers'
 import { FormFields } from './types'
 
 const ContactForm = () => {
-	const { toast } = useToast()
-
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues,
 	})
 
+	const isLoading = form.formState.isSubmitting
+
 	async function onSubmit(payload: z.infer<typeof formSchema>) {
+		const { toast } = await import('@hooks/use-toast')
 		try {
 			const response = await fetch('/api/contact', {
 				method: 'POST',
@@ -74,8 +74,13 @@ const ContactForm = () => {
 						)}
 					/>
 				))}
-				<Button disabled={form.formState.isSubmitting} className='col-span-2' type='submit'>
-					<Send /> <span>Send message</span>
+				<Button
+					disabled={isLoading}
+					className='col-span-2 disabled:opacity-100'
+					type='submit'
+				>
+					{isLoading ? <LoaderCircle className='animate-spin' /> : <Send />}{' '}
+					<span>{isLoading ? 'Sending...' : 'Send message'}</span>
 				</Button>
 			</form>
 		</Form>

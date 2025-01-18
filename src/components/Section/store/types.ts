@@ -1,9 +1,6 @@
-export enum SectionType {
-	Hero = 'hero',
-	CaseStudies = 'case-studies',
-}
+import { SectionType } from '@utils/types'
 
 export type SectionStoreProps = {
-	sectionType: string
-	setSectionType: (sectionType: string) => void
+	sectionType: SectionType
+	setSectionType: (sectionType: SectionType) => void
 }

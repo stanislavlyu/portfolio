@@ -9,6 +9,7 @@ import {
 	CarouselNavigation,
 } from '@components/ui/carousel'
 import { cn } from '@lib/utils'
+import { SectionType } from '@utils/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -16,7 +17,7 @@ import { SLIDES, SlideVariant } from './constants'
 
 const CaseStudies = () => {
 	return (
-		<Section id='case-studies' className='pb-20 md:mb-[10rem]'>
+		<Section id={SectionType.CaseStudies} className='pb-20 md:mb-[10rem]'>
 			<Container>
 				<Title
 					title='Case Studies'

@@ -8,7 +8,7 @@ import { NavigationMenuProps } from './types'
 const HeaderNavigationMenu = ({ className }: NavigationMenuProps) => {
 	return (
 		<nav className={cn(className)}>
-			{NAVIGATION_LIST.map(({ id, title, href }) => (
+			{NAVIGATION_LIST.map(({ id, title }) => (
 				<Button
 					variant='ghost'
 					key={id}
@@ -18,7 +18,7 @@ const HeaderNavigationMenu = ({ className }: NavigationMenuProps) => {
 					asChild
 					role='link'
 				>
-					<Link href={href}>{title}</Link>
+					<Link href={`#${id}`}>{title}</Link>
 				</Button>
 			))}
 		</nav>

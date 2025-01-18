@@ -10,13 +10,14 @@ import {
 	CarouselItem,
 	CarouselNavigation,
 } from '@components/ui/carousel'
+import { SectionType } from '@utils/types'
 import Image from 'next/image'
 import React from 'react'
 import { CAROUSEL_ITEMS } from './constants'
 
 const Testimonials = () => {
 	return (
-		<Section id='testimonials' className='pb-20 md:mb-[10rem]'>
+		<Section id={SectionType.Testimonials} className='pb-20 md:mb-[10rem]'>
 			<Container>
 				<Title
 					title='Testimonials'
