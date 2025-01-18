@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { CHARACTERS } from '../constants'
+import { CHARACTERS, FONT_SIZE } from './constants'
 
 const useDigitalRain = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -14,8 +14,7 @@ const useDigitalRain = () => {
 		canvas.width = window.innerWidth
 		canvas.height = window.innerHeight
 
-		const fontSize = 16
-		const columns = canvas.width / fontSize
+		const columns = canvas.width / FONT_SIZE
 
 		const drops: number[] = []
 		for (let i = 0; i < columns; i++) {
@@ -29,13 +28,13 @@ const useDigitalRain = () => {
 			ctx.fillRect(0, 0, canvas.width, canvas.height)
 
 			ctx.fillStyle = 'rgba(22,55,114,0.55)'
-			ctx.font = `${fontSize}px monospace`
+			ctx.font = `${FONT_SIZE}px monospace`
 
 			for (let i = 0; i < drops.length; i++) {
 				const text = CHARACTERS.charAt(Math.floor(Math.random() * CHARACTERS.length))
-				ctx.fillText(text, i * fontSize, drops[i] * fontSize)
+				ctx.fillText(text, i * FONT_SIZE, drops[i] * FONT_SIZE)
 
-				if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
+				if (drops[i] * FONT_SIZE > canvas.height && Math.random() > 0.95) {
 					drops[i] = 0
 				}
 
@@ -44,12 +43,18 @@ const useDigitalRain = () => {
 		}
 
 		const intervalId = setInterval(draw, 50)
+		let scheduledAnimationFrame = false
 
 		function handleResize() {
-			if (!canvas) return
-
-			canvas.width = window.innerWidth
-			canvas.height = window.innerHeight
+			if (scheduledAnimationFrame) return
+			scheduledAnimationFrame = true
+			requestAnimationFrame(() => {
+				if (canvas) {
+					canvas.width = window.innerWidth
+					canvas.height = window.innerHeight
+				}
+				scheduledAnimationFrame = false
+			})
 		}
 
 		window.addEventListener('resize', handleResize)
