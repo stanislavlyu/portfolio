@@ -10,7 +10,6 @@ import {
 	CarouselItem,
 	CarouselNavigation,
 } from '@components/ui/carousel'
-import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
 import Image from 'next/image'
 import React from 'react'
 import { CAROUSEL_ITEMS } from './constants'

@@ -1,4 +1,3 @@
-import { TextEffect } from '@components/ui/text-effect'
 import { TextShimmer } from '@components/ui/text-shimmer'
 import { cn } from '@lib/utils'
 import { Code, CodeXml } from 'lucide-react'
@@ -27,7 +26,7 @@ const Title = ({ variant = TitleVariant.Horizontal, className, title, text }: Ti
 			{text && (
 				<div
 					className={cn(
-						'font-firaCode max-w-[30rem] text-center text-base text-black dark:text-gray-300 md:text-right',
+						'max-w-[30rem] text-center font-firaCode text-base text-black dark:text-gray-300 md:text-right',
 						{
 							'text-center': variant === TitleVariant.Vertical,
 						}

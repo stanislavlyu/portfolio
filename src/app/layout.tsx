@@ -1,21 +1,18 @@
+import DigitalRain from '@components/DigitalRain'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
-import DigitalRain from '@components/Hero/DigitalRain'
 import { Spotlight } from '@components/ui/spotlight'
 import { Toaster } from '@components/ui/toaster'
 import { inter, firaCode } from '@fonts/fonts'
 import { cn } from '@lib/utils'
 import { ThemeProvider } from '@providers/theme-provider'
+import { FALLBACK_SEO } from '@utils/constants'
 import type { Metadata } from 'next'
 import React from 'react'
 import './globals.css'
 import { RootLayoutProps } from './types'
 
-export const metadata: Metadata = {
-	title: 'Stanislav Lyu',
-	description:
-		"I'm a software engineer who builds accessible, inclusive products and digital experiences for the web.",
-}
+export const metadata: Metadata = FALLBACK_SEO
 
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
