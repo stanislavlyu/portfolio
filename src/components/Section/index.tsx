@@ -13,7 +13,6 @@ const Section = ({ id, children, className, enableAnimation = true }: SectionPro
 	const inView = useInView(ref, { once: false })
 
 	useEffect(() => {
-		console.log(ref)
 		if (inView) {
 			setSectionType(id)
 		}
