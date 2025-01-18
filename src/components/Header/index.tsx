@@ -1,9 +1,11 @@
 import Container from '@components/Container'
-import HamburgerMenu from '@components/Header/HamburgerMenu'
 import Logo from '@components/Logo'
+import dynamic from 'next/dynamic'
 import React from 'react'
 import ContactButton from './ContactButton'
 import HeaderNavigationMenu from './NavigationMenu'
+
+const HamburgerMenu = dynamic(() => import('./HamburgerMenu'))
 
 const Header = () => {
 	return (
