@@ -9,7 +9,7 @@ import useSection from './hooks/useSection'
 import { SectionType } from './store/types'
 import { SectionProps } from './types'
 
-const Section = ({ id, children, className }: SectionProps) => {
+const Section = ({ id, children, className, enableAnimation = true }: SectionProps) => {
 	const ref = useRef<HTMLDivElement>(null)
 	const { setSectionType } = useSection()
 	const inView = useInView(ref, viewOptions)
@@ -26,16 +26,20 @@ const Section = ({ id, children, className }: SectionProps) => {
 			id={id}
 			className={cn('relative overflow-hidden py-10 md:py-20 lg:py-[7.5rem]', className)}
 		>
-			<InView
-				variants={{
-					hidden: { opacity: 0, y: -100, filter: 'blur(8px)' },
-					visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-				}}
-				viewOptions={{ ...viewOptions, once: true }}
-				transition={{ duration: 0.75, ease: 'easeInOut' }}
-			>
-				{children}
-			</InView>
+			{enableAnimation ? (
+				<InView
+					variants={{
+						hidden: { opacity: 0, y: -100, filter: 'blur(8px)' },
+						visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+					}}
+					viewOptions={{ ...viewOptions, once: true }}
+					transition={{ duration: 0.75, ease: 'easeInOut' }}
+				>
+					{children}
+				</InView>
+			) : (
+				children
+			)}
 		</section>
 	)
 }

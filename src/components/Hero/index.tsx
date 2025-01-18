@@ -10,7 +10,11 @@ import { TECH_ICONS } from './constants'
 
 const Hero = () => {
 	return (
-		<Section id='hero' className='py-0 md:min-h-[46rem] md:py-0 lg:py-0'>
+		<Section
+			id='hero'
+			className='py-0 md:min-h-[46rem] md:py-0 lg:py-0'
+			enableAnimation={false}
+		>
 			<Container className='h-svh flex-col items-center justify-center'>
 				<div className='flex h-full w-full flex-col items-center justify-center gap-2 text-center text-black dark:text-white md:order-1'>
 					<Title />
