@@ -3,7 +3,6 @@ import { CHARACTERS, FONT_SIZE } from './constants'
 
 const useDigitalRain = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
-	let lastWidth = window.innerWidth
 
 	useEffect(() => {
 		const canvas = canvasRef.current
@@ -50,8 +49,7 @@ const useDigitalRain = () => {
 			if (scheduledAnimationFrame) return
 			scheduledAnimationFrame = true
 			requestAnimationFrame(() => {
-				if (canvas && window.innerWidth !== lastWidth) {
-					lastWidth = window.innerWidth
+				if (canvas) {
 					canvas.width = window.innerWidth
 					canvas.height = window.innerHeight
 				}
