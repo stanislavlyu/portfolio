@@ -1,7 +1,8 @@
 'use client'
 
+import useMediaQuery from '@hooks/useMediaQuery'
 import { motion, useSpring, useTransform } from 'motion/react'
-import React, { useRef, useState, useCallback, useEffect } from 'react'
+import React, { useRef, useCallback, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 
 type SpotlightProps = {
@@ -11,7 +12,7 @@ type SpotlightProps = {
 
 export function Spotlight({ className, size = 200 }: SpotlightProps) {
 	const containerRef = useRef<HTMLDivElement>(null)
-	const [parentElement, setParentElement] = useState<HTMLElement | null>(null)
+	const isMobile = useMediaQuery('(max-width: 768px)')
 
 	const mouseX = useSpring(0, { bounce: 0 })
 	const mouseY = useSpring(0, { bounce: 0 })
@@ -19,34 +20,30 @@ export function Spotlight({ className, size = 200 }: SpotlightProps) {
 	const spotlightLeft = useTransform(mouseX, (x) => `${x - size / 2}px`)
 	const spotlightTop = useTransform(mouseY, (y) => `${y - size / 2}px`)
 
-	useEffect(() => {
-		if (containerRef.current) {
-			const parent = containerRef.current.parentElement
-			if (parent) {
-				setParentElement(parent)
-			}
-		}
-	}, [])
-
 	const handleMouseMove = useCallback(
 		(event: MouseEvent) => {
-			if (!parentElement) return
-			const { left, top } = parentElement.getBoundingClientRect()
+			const parent = containerRef.current?.parentElement
+			if (!parent) return
+			const { left, top } = parent.getBoundingClientRect()
 			mouseX.set(event.clientX - left)
 			mouseY.set(event.clientY - top)
 		},
-		[mouseX, mouseY, parentElement]
+		[mouseX, mouseY]
 	)
 
 	useEffect(() => {
-		if (!parentElement) return
+		if (!containerRef.current?.parentElement || isMobile) return
 
-		parentElement.addEventListener('mousemove', handleMouseMove)
+		const parent = containerRef.current.parentElement
+		parent.addEventListener('mousemove', handleMouseMove)
 
 		return () => {
-			parentElement.removeEventListener('mousemove', handleMouseMove)
+			parent.removeEventListener('mousemove', handleMouseMove)
 		}
-	}, [parentElement, handleMouseMove])
+	}, [isMobile])
+
+	if (isMobile) return null
+
 	return (
 		<motion.div
 			ref={containerRef}

@@ -1,3 +1,4 @@
+import { debounce } from 'lodash'
 import { useEffect, useRef } from 'react'
 import { CHARACTERS, FONT_SIZE } from './constants'
 
@@ -45,17 +46,16 @@ const useDigitalRain = () => {
 		const intervalId = setInterval(draw, 50)
 		let scheduledAnimationFrame = false
 
-		function handleResize() {
+		const handleResize = debounce(() => {
 			if (scheduledAnimationFrame) return
 			scheduledAnimationFrame = true
 			requestAnimationFrame(() => {
 				if (canvas) {
 					canvas.width = window.innerWidth
-					canvas.height = window.innerHeight
 				}
 				scheduledAnimationFrame = false
 			})
-		}
+		}, 150)
 
 		window.addEventListener('resize', handleResize)
 
