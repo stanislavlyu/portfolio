@@ -4,6 +4,7 @@ import Header from '@components/Header'
 import { Spotlight } from '@components/ui/spotlight'
 import { inter, firaCode } from '@fonts/fonts'
 import { cn } from '@lib/utils'
+import ReactQueryProvider from '@providers/react-query-provider'
 import { ThemeProvider } from '@providers/theme-provider'
 import { FALLBACK_SEO } from '@utils/constants'
 import type { Metadata } from 'next'
@@ -25,10 +26,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
 					size={64}
 				/>
 				<ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
-					<Header />
-					<main>{children}</main>
-					<Footer />
-					<Toaster />
+					<ReactQueryProvider>
+						<Header />
+						<main>{children}</main>
+						<Footer />
+						<Toaster />
+					</ReactQueryProvider>
 				</ThemeProvider>
 			</body>
 		</html>

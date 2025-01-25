@@ -4,11 +4,13 @@ import { Button } from '@components/ui/button'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@components/ui/form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { cn } from '@lib/utils'
+import { useMutation } from '@tanstack/react-query'
 import { LoaderCircle, Send } from 'lucide-react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { defaultValues, FORM_FIELDS, formSchema } from './constants'
 import { renderInputComponent } from './helpers'
+import { useContactMutation } from './mutations'
 import { FormFields } from './types'
 
 const ContactForm = () => {
@@ -17,39 +19,10 @@ const ContactForm = () => {
 		defaultValues,
 	})
 
-	const isLoading = form.formState.isSubmitting
+	const { mutate, isPending } = useMutation(useContactMutation(form))
 
-	async function onSubmit(payload: z.infer<typeof formSchema>) {
-		const { toast } = await import('@hooks/use-toast')
-		try {
-			const response = await fetch('/api/contact', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(payload),
-			})
-			if (response.ok) {
-				form.reset()
-				toast({
-					variant: 'default',
-					description: 'Message sent successfully!',
-				})
-			} else {
-				toast({
-					variant: 'destructive',
-					title: 'Uh oh! Something went wrong.',
-					description: 'Failed to send message.',
-				})
-			}
-		} catch (error) {
-			console.error('Error sending message:', error)
-			toast({
-				variant: 'destructive',
-				title: 'Uh oh! Something went wrong.',
-				description: 'There was a problem with your request.',
-			})
-		}
+	const onSubmit = (payload: z.infer<typeof formSchema>) => {
+		mutate(payload)
 	}
 
 	return (
@@ -75,12 +48,12 @@ const ContactForm = () => {
 					/>
 				))}
 				<Button
-					disabled={isLoading}
+					disabled={isPending}
 					className='col-span-2 disabled:opacity-100'
 					type='submit'
 				>
-					{isLoading ? <LoaderCircle className='animate-spin' /> : <Send />}{' '}
-					<span>{isLoading ? 'Sending...' : 'Send message'}</span>
+					{isPending ? <LoaderCircle className='animate-spin' /> : <Send />}{' '}
+					<span>{isPending ? 'Sending...' : 'Send message'}</span>
 				</Button>
 			</form>
 		</Form>
