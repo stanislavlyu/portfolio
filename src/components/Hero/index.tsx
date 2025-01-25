@@ -1,11 +1,19 @@
+'use client'
+
 import Container from '@components/Container'
 import Section from '@components/Section'
 import { SectionType } from '@utils/types'
+import dynamic from 'next/dynamic'
 import React from 'react'
 import Description from './Description'
 import DownloadCVButton from './DownloadCVButton'
-import Marquee from './Marquee'
+import MarqueeLoading from './Marquee/loading'
 import Title from './Title'
+
+const Marquee = dynamic(() => import('./Marquee'), {
+	ssr: false,
+	loading: () => <MarqueeLoading />,
+})
 
 const Hero = () => {
 	return (
