@@ -16,8 +16,11 @@ const Hero = () => {
 		>
 			<Container className='h-full flex-col items-center justify-center'>
 				<div className='flex h-full w-full flex-col items-center justify-center gap-2 text-center text-black dark:text-white md:order-1'>
-					<Title />
-					<Description />
+					<Title text='Stanislav Lyu' intro='Hi there, I am' />
+					<Description
+						title='Experienced front-end developer'
+						subtitle='with 5+ years of expertise in'
+					/>
 					<DownloadCVButton className='relative mt-2 flex w-max flex-col gap-4 rounded sm:flex-row lg:mt-4' />
 				</div>
 			</Container>

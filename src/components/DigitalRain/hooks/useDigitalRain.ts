@@ -1,6 +1,6 @@
 import { debounce } from 'lodash'
 import { useEffect, useRef } from 'react'
-import { CHARACTERS, FONT_SIZE } from './constants'
+import { DIGITAL_RAIN_CONFIG } from './constants'
 
 const useDigitalRain = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -15,7 +15,7 @@ const useDigitalRain = () => {
 		canvas.width = window.innerWidth
 		canvas.height = window.innerHeight
 
-		const columns = canvas.width / FONT_SIZE
+		const columns = canvas.width / DIGITAL_RAIN_CONFIG.FONT_SIZE
 
 		const drops: number[] = []
 		for (let i = 0; i < columns; i++) {
@@ -29,13 +29,22 @@ const useDigitalRain = () => {
 			ctx.fillRect(0, 0, canvas.width, canvas.height)
 
 			ctx.fillStyle = 'rgba(22,55,114,0.55)'
-			ctx.font = `${FONT_SIZE}px monospace`
+			ctx.font = `${DIGITAL_RAIN_CONFIG.FONT_SIZE}px monospace`
 
 			for (let i = 0; i < drops.length; i++) {
-				const text = CHARACTERS.charAt(Math.floor(Math.random() * CHARACTERS.length))
-				ctx.fillText(text, i * FONT_SIZE, drops[i] * FONT_SIZE)
+				const text = DIGITAL_RAIN_CONFIG.CHARACTERS.charAt(
+					Math.floor(Math.random() * DIGITAL_RAIN_CONFIG.CHARACTERS.length)
+				)
+				ctx.fillText(
+					text,
+					i * DIGITAL_RAIN_CONFIG.FONT_SIZE,
+					drops[i] * DIGITAL_RAIN_CONFIG.FONT_SIZE
+				)
 
-				if (drops[i] * FONT_SIZE > canvas.height && Math.random() > 0.95) {
+				if (
+					drops[i] * DIGITAL_RAIN_CONFIG.FONT_SIZE > canvas.height &&
+					Math.random() > 0.95
+				) {
 					drops[i] = 0
 				}
 
