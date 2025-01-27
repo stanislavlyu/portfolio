@@ -27,6 +27,7 @@ const BackgroundVideo = async ({
 			muted={muted}
 			loop={loop}
 			suppressHydrationWarning
+			playsInline
 		>
 			<source src={src} type='video/mp4' />
 			Your browser does not support the video tag.
