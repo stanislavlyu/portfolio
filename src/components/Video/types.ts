@@ -6,4 +6,5 @@ export type VideoProps = {
 	muted?: boolean
 	loop?: boolean
 	poster?: string
+	preload?: 'none' | 'metadata' | 'auto'
 }

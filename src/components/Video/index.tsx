@@ -10,13 +10,14 @@ const Video = ({
 	muted = true,
 	controls,
 	loop = true,
+	preload = 'none',
 }: VideoProps) => {
 	return (
 		<video
 			className={cn('object-cover', className)}
 			controls={controls}
 			autoPlay={autoPlay}
-			preload='metadata'
+			preload={preload}
 			aria-label='Video player'
 			muted={muted}
 			loop={loop}

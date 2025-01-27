@@ -19,7 +19,7 @@ const Hero = () => {
 				src='/assets/videos/hero-background.mp4'
 				poster='/assets/images/hero-background.webp'
 				autoPlay
-				preload='metadata'
+				preload='auto'
 			/>
 			<Container className='h-full flex-col items-center justify-center'>
 				<div className='flex h-full w-full flex-col items-center justify-center gap-2 text-center text-white md:order-1'>
