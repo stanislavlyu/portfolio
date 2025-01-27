@@ -16,13 +16,14 @@ const Video = async ({
 		prefix: fileName,
 	})
 	const src = blobs[fileIndex].url
-
+	const posterSrc = blobs.find((blob) => blob.pathname.includes('poster'))?.url || ''
+	console.log(posterSrc)
 	return (
 		<video
 			className={cn('object-cover', className)}
 			controls={controls}
 			autoPlay={autoPlay}
-			preload='none'
+			preload='metadata'
 			aria-label='Video player'
 			muted={muted}
 			loop={loop}
