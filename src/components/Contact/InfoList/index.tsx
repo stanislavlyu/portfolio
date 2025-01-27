@@ -9,6 +9,8 @@ const ContactInfoList = () => {
 					<Link
 						href={link}
 						target='_blank'
+						prefetch={false}
+						rel='noopener noreferrer'
 						className='group flex h-max w-max items-center gap-3 text-sm text-gray-300 hover:text-white'
 					>
 						<div className='flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-white'>

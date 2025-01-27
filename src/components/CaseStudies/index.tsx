@@ -33,7 +33,6 @@ const CaseStudies = () => {
 									variant,
 									title,
 									description,
-									mockupImage,
 									backgroundImage,
 									logo,
 									button,
@@ -62,7 +61,10 @@ const CaseStudies = () => {
 													)}
 												>
 													<div>
-														<Image className='object-cover' {...logo} />
+														<Image
+															className='pointer-events-none object-cover'
+															{...logo}
+														/>
 														<h3 className='mt-6 text-[1.5625rem] font-semibold leading-[2.1875rem] lg:mt-8 lg:text-[2.375rem] lg:leading-[3rem]'>
 															{title}
 														</h3>
@@ -90,7 +92,12 @@ const CaseStudies = () => {
 														}
 														asChild
 													>
-														<Link href={button.href}>
+														<Link
+															href={button.href}
+															rel='noopener noreferrer'
+															target='_blank'
+															prefetch={false}
+														>
 															{button.title}
 														</Link>
 													</Button>
