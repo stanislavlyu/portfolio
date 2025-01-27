@@ -1,5 +1,5 @@
 export type VideoProps = {
-	fileName: string
+	src: string
 	autoPlay?: boolean
 	controls?: boolean
 	className?: string

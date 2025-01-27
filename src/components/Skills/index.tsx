@@ -20,7 +20,7 @@ const Skills = () => {
 				<div className='mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10'>
 					<Video
 						className='h-full w-full scale-x-[-1] lg:order-last'
-						fileName='skills'
+						src='/assets/videos/devices.mp4'
 						autoPlay
 					/>
 					<div className='flex flex-wrap gap-8'>

@@ -15,7 +15,12 @@ const Hero = () => {
 			className='h-svh py-0 md:min-h-[46rem] md:py-0 lg:py-0 2xl:h-[55rem]'
 			enableAnimation={false}
 		>
-			<BackgroundVideo fileName='hero' autoPlay preload='metadata' />
+			<BackgroundVideo
+				src='/assets/videos/hero-background.mp4'
+				poster='/assets/images/hero-background.webp'
+				autoPlay
+				preload='metadata'
+			/>
 			<Container className='h-full flex-col items-center justify-center'>
 				<div className='flex h-full w-full flex-col items-center justify-center gap-2 text-center text-white md:order-1'>
 					<Title text='Stanislav Lyu' intro='Hi there, I am' />
