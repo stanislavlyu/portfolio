@@ -1,5 +1,4 @@
 import { list } from '@vercel/blob'
-import Image from 'next/image'
 import React from 'react'
 import { cn } from '@/lib/utils'
 import { VideoProps } from './types.js'
