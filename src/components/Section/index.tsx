@@ -22,7 +22,7 @@ const Section = ({ id, children, className, enableAnimation = true }: SectionPro
 		<section
 			ref={ref}
 			id={id}
-			className={cn('relative overflow-hidden py-10 md:py-20 lg:py-[7.5rem]', className)}
+			className={cn('relative py-10 md:py-20 lg:py-[7.5rem]', className)}
 		>
 			{enableAnimation ? (
 				<InView

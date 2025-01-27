@@ -1,4 +1,3 @@
-import Container from '@components/Container'
 import Section from '@components/Section'
 import Title from '@components/Title'
 import { Button } from '@components/ui/button'
@@ -21,7 +20,7 @@ const CaseStudies = () => {
 		<Section id={SectionType.CaseStudies}>
 			<Vector position='left' />
 			<Vector position='right' />
-			<Container className='relative z-20'>
+			<div className='container relative z-20'>
 				<Title
 					title='Case Studies'
 					text='An in-depth exploration of projects and challenges, showcasing innovative solutions, strategic thinking, and measurable outcomes that demonstrate expertise and impact.'
@@ -39,7 +38,10 @@ const CaseStudies = () => {
 									logo,
 									button,
 								}) => (
-									<CarouselItem key={title} className='basis-full pl-4'>
+									<CarouselItem
+										key={title}
+										className='basis-full pl-4 md:basis-1/2'
+									>
 										<div className='relative basis-full overflow-hidden rounded-2xl'>
 											<Image
 												className='absolute left-0 right-0 h-full w-full object-cover'
@@ -47,7 +49,7 @@ const CaseStudies = () => {
 												placeholder='blur'
 												{...backgroundImage}
 											/>
-											<div className='grid grid-cols-1 justify-between px-6 py-6 lg:grid-cols-2 lg:px-16 lg:py-10'>
+											<div className='justify-between px-6 py-6 lg:px-16 lg:py-10'>
 												<div
 													className={cn(
 														'relative z-10 flex h-full flex-grow flex-col items-start justify-between gap-6 md:gap-8',
@@ -93,14 +95,6 @@ const CaseStudies = () => {
 														</Link>
 													</Button>
 												</div>
-												<div className='relative h-full w-full'>
-													<Image
-														className='z-10 object-cover'
-														fill
-														placeholder='blur'
-														{...mockupImage}
-													/>
-												</div>
 											</div>
 										</div>
 									</CarouselItem>
@@ -109,12 +103,12 @@ const CaseStudies = () => {
 						</CarouselContent>
 						<CarouselNavigation
 							className='absolute -bottom-20 left-auto top-auto w-full justify-end gap-2'
-							classNameButton='bg-zinc-800 *:stroke-zinc-50 bg-blue-900 *:stroke-white'
+							classNameButton='bg-blue-800 *:stroke-blue-50'
 							alwaysShow
 						/>
 					</Carousel>
 				</div>
-			</Container>
+			</div>
 		</Section>
 	)
 }

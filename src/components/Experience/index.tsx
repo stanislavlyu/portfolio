@@ -1,12 +1,10 @@
 'use client'
 
-import Container from '@components/Container'
 import Section from '@components/Section'
 import Title from '@components/Title'
 import { Button } from '@components/ui/button'
 import { SectionType } from '@utils/types'
 import { motion } from 'framer-motion'
-import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import Card from './Card'
 import GradientOverlay from './GradientOverlay'
@@ -15,18 +13,14 @@ import { EXPERIENCE_LIST } from './constants'
 
 const Experience = () => {
 	const [isOpen, setIsOpen] = useState(false)
-	const router = useRouter()
 
 	const handleToggle = () => {
-		if (isOpen) {
-			router.push('#experience')
-		}
 		setIsOpen(!isOpen)
 	}
 	return (
 		<Section id={SectionType.Experience} className='py-10'>
 			<Vector />
-			<Container className='relative z-20'>
+			<div className='container relative z-20'>
 				<Title
 					title='Work Experience'
 					text='A showcase of my journey, skills, and contributions across diverse roles. From building high-performance websites to developing cutting-edge platforms, here are my career highlights.'
@@ -45,7 +39,7 @@ const Experience = () => {
 				<Button variant='outline' className='mt-4' onClick={handleToggle}>
 					{isOpen ? 'Show Less' : 'Show More'}
 				</Button>
-			</Container>
+			</div>
 		</Section>
 	)
 }

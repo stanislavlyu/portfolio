@@ -6,7 +6,7 @@ import { TECH_ICONS } from './constants'
 const HeroMarquee = () => {
 	return (
 		<div className='absolute bottom-6 z-10 w-full'>
-			<Marquee gradient={false} speed={50} direction='right' pauseOnHover>
+			<Marquee gradient gradientColor='black' speed={50} direction='right' pauseOnHover>
 				{TECH_ICONS.map(({ title, icon, alt }, index) => (
 					<Item key={index} title={title} icon={icon} alt={alt} />
 				))}

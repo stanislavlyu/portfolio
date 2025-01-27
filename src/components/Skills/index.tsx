@@ -1,17 +1,17 @@
-import Container from '@components/Container'
+import videoSrc from '/videos/devices.mp4'
 import Section from '@components/Section'
 import SkillsList from '@components/Skills/List'
 import Title from '@components/Title'
 import { TitleVariant } from '@components/Title/types'
-import Video from '@components/Video'
 import { SectionType } from '@utils/types'
+import Video from 'next-video'
 import React from 'react'
 import { ITEMS } from './constants'
 
 const Skills = () => {
 	return (
 		<Section id={SectionType.Skills}>
-			<Container>
+			<div className='container'>
 				<Title
 					variant={TitleVariant.Vertical}
 					title='Skills'
@@ -19,15 +19,13 @@ const Skills = () => {
 				/>
 				<div className='mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10'>
 					<Video
-						id='skills-video'
 						className='h-full w-full scale-x-[-1] lg:order-last'
-						src='portfolio/devices_background'
-						autoplay={true}
-						muted
-						loop
+						src={videoSrc}
+						autoPlay
 						controls={false}
-						height={424}
-						width={588}
+						muted
+						playsInline
+						loop
 					/>
 					<div className='flex flex-wrap gap-8'>
 						{ITEMS.map(({ title, skills }) => (
@@ -40,7 +38,7 @@ const Skills = () => {
 						))}
 					</div>
 				</div>
-			</Container>
+			</div>
 		</Section>
 	)
 }

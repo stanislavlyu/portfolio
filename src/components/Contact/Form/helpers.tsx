@@ -14,7 +14,7 @@ export const renderInputComponent = (
 		case 'textarea':
 			return (
 				<Textarea
-					className='min-h-40 resize-none bg-black/50'
+					className='min-h-40 resize-none bg-black'
 					placeholder={placeholder}
 					{...field}
 					value={field.value as string}
@@ -23,7 +23,7 @@ export const renderInputComponent = (
 		case 'email':
 			return (
 				<Input
-					className='bg-black/50'
+					className='bg-black'
 					id={field.name}
 					type='email'
 					placeholder={placeholder}
@@ -34,7 +34,7 @@ export const renderInputComponent = (
 		default:
 			return (
 				<Input
-					className='bg-black/50'
+					className='bg-black'
 					id={field.name}
 					placeholder={placeholder}
 					{...field}
