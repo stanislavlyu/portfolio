@@ -5,7 +5,6 @@ import { VideoProps } from './types.js'
 
 const Video = async ({
 	fileName,
-	fileIndex,
 	className,
 	autoPlay,
 	muted = true,
@@ -15,9 +14,8 @@ const Video = async ({
 	const { blobs } = await list({
 		prefix: fileName,
 	})
-	const src = blobs[fileIndex].url
-	const posterSrc = blobs.find((blob) => blob.pathname.includes('poster'))?.url || ''
-	console.log(posterSrc)
+	const src = blobs[1].url
+	console.log(src)
 	return (
 		<video
 			className={cn('object-cover', className)}

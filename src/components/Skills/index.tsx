@@ -17,23 +17,22 @@ const Skills = () => {
 					title='Skills'
 					text='A comprehensive showcase of technical expertise and interpersonal abilities, highlighting the tools, technologies, and soft skills that contribute to professional success and effective collaboration.'
 				/>
-				<div className='mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10'>
-					<div>
+				<div className='mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10'>
+					<Video
+						className='h-full w-full scale-x-[-1] lg:order-last'
+						fileName='skills'
+						autoPlay
+					/>
+					<div className='flex flex-wrap gap-8'>
 						{ITEMS.map(({ title, skills }) => (
 							<div key={title} className='py-2'>
-								<h3 className='mb-8 max-w-[20rem] font-medium text-zinc-100'>
+								<h3 className='mb-3 max-w-[20rem] font-medium text-zinc-100'>
 									{title}
 								</h3>
 								{<SkillsList skillsList={skills} />}
 							</div>
 						))}
 					</div>
-					<Video
-						className='h-full w-full scale-x-[-1]'
-						fileName='videos'
-						fileIndex={0}
-						autoPlay
-					/>
 				</div>
 			</Container>
 		</Section>

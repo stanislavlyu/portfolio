@@ -1,37 +1,42 @@
 import { list } from '@vercel/blob'
+import Image from 'next/image'
 import React from 'react'
 import { cn } from '@/lib/utils'
 import { VideoProps } from './types.js'
 
 const BackgroundVideo = async ({
 	fileName,
-	fileIndex,
 	className,
 	autoPlay,
 	muted = true,
 	controls,
 	loop = true,
+	preload = 'none',
 }: VideoProps) => {
 	const { blobs } = await list({
 		prefix: fileName,
 	})
-	const src = blobs[fileIndex]?.url
+	const videoSrc = blobs.find((blob) => blob.pathname.includes('.mp4'))?.url
+	const posterSrc = blobs.find((blob) => blob.pathname.includes('.webp'))?.url
 
 	return (
-		<video
-			className={cn('absolute inset-0 -z-[1] h-full w-full object-cover', className)}
-			controls={controls}
-			autoPlay={autoPlay}
-			preload='metadata'
-			aria-label='Video player'
-			muted={muted}
-			loop={loop}
-			suppressHydrationWarning
-			playsInline
-		>
-			<source src={src} type='video/mp4' />
-			Your browser does not support the video tag.
-		</video>
+		<div className='absolute inset-0 -z-[1] h-full w-full'>
+			<video
+				className={cn('h-full w-full object-cover', className)}
+				controls={controls}
+				autoPlay={autoPlay}
+				preload={preload}
+				aria-label='Video player'
+				poster={posterSrc}
+				muted={muted}
+				loop={loop}
+				suppressHydrationWarning
+				playsInline
+			>
+				<source src={videoSrc} type='video/mp4' />
+				Your browser does not support the video tag.
+			</video>
+		</div>
 	)
 }
 
