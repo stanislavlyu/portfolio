@@ -10,7 +10,13 @@ const ContactVector = () => {
 					'h-20 w-full bg-gradient-to-b from-black to-transparent'
 				)}
 			/>
-			<Image src='/assets/images/contact-vectors.svg' alt='geometry lines' fill unoptimized />
+			<Image
+				src='/assets/images/contact-vectors.svg'
+				className='object-cover'
+				alt='geometry lines'
+				fill
+				unoptimized
+			/>
 		</div>
 	)
 }

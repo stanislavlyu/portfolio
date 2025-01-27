@@ -17,11 +17,7 @@ const Hero = () => {
 			className='h-svh overflow-hidden py-0 md:min-h-[46rem] md:py-0 lg:py-0 2xl:h-[55rem]'
 			enableAnimation={false}
 		>
-			<BackgroundVideo
-				className='h-svh w-screen object-cover'
-				suppressHydrationWarning
-				src={videoSrc}
-			>
+			<BackgroundVideo className='h-svh w-screen' suppressHydrationWarning src={videoSrc}>
 				<div className='container h-full flex-col items-center justify-center'>
 					<div className='relative z-10 flex h-full w-full flex-col items-center justify-center gap-2 text-center text-white md:order-1'>
 						<Title text='Stanislav Lyu' intro='Hi there, I am' />

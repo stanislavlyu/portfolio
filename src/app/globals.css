@@ -17,27 +17,6 @@ body {
 	background-color: #000000;
 }
 
-/* .video-fullscreen > div {
-	width: 100%;
-	height: 100%;
-}
-
-.video-js {
-	width: 100%;
-	height: 100% !important;
-}
-
-.cld-video-player {
-	width: 100%;
-	height: 100%;
-} */
-
-video {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
 @layer base {
 	:root {
 		--background: 224 71.4% 4.1%;

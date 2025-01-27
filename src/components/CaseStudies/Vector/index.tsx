@@ -2,14 +2,15 @@ import { cn } from '@lib/utils'
 import Image from 'next/image'
 import { CaseStudiesVectorProps } from './types'
 
-const Vector = ({ position }: CaseStudiesVectorProps) => {
+const Vector = ({ position, className }: CaseStudiesVectorProps) => {
 	return (
 		<div
 			className={cn(
 				'h-full w-full max-w-[19rem]',
 				'absolute top-0',
 				position === 'left' && 'left-0 -scale-x-[1]',
-				position === 'right' && 'right-0'
+				position === 'right' && 'right-0',
+				className
 			)}
 		>
 			<div

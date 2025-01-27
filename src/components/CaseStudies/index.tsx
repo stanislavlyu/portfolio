@@ -19,7 +19,7 @@ const CaseStudies = () => {
 	return (
 		<Section id={SectionType.CaseStudies}>
 			<Vector position='left' />
-			<Vector position='right' />
+			<Vector position='right' className='hidden md:block' />
 			<div className='container relative z-20'>
 				<Title
 					title='Case Studies'
