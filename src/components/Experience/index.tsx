@@ -14,9 +14,6 @@ import { EXPERIENCE_LIST } from './constants'
 const Experience = () => {
 	const [isOpen, setIsOpen] = useState(false)
 
-	const handleToggle = () => {
-		setIsOpen(!isOpen)
-	}
 	return (
 		<Section id={SectionType.Experience} className='py-10'>
 			<Vector />
@@ -36,9 +33,11 @@ const Experience = () => {
 					))}
 					{!isOpen && <GradientOverlay />}
 				</motion.div>
-				<Button variant='outline' className='mt-4' onClick={handleToggle}>
-					{isOpen ? 'Show Less' : 'Show More'}
-				</Button>
+				{!isOpen && (
+					<Button variant='outline' className='mt-4' onClick={() => setIsOpen(false)}>
+						Show More
+					</Button>
+				)}
 			</div>
 		</Section>
 	)

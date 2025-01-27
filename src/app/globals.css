@@ -17,6 +17,10 @@ body {
 	background-color: #000000;
 }
 
+video {
+	object-fit: cover;
+}
+
 @layer base {
 	:root {
 		--background: 224 71.4% 4.1%;
