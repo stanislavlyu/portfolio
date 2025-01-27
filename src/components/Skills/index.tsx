@@ -21,6 +21,7 @@ const Skills = () => {
 					<Video
 						className='h-full w-full scale-x-[-1] lg:order-last'
 						src='/assets/videos/devices.mp4'
+						poster='/assets/images/devices.webp'
 						autoPlay
 					/>
 					<div className='flex flex-wrap gap-8'>

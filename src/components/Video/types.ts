@@ -5,4 +5,5 @@ export type VideoProps = {
 	className?: string
 	muted?: boolean
 	loop?: boolean
+	poster?: string
 }
