@@ -13,12 +13,15 @@ import { SectionType } from '@utils/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import Vector from './Vector'
 import { SLIDES, SlideVariant } from './constants'
 
 const CaseStudies = () => {
 	return (
-		<Section id={SectionType.CaseStudies} className='pb-20 md:mb-[10rem]'>
-			<Container>
+		<Section id={SectionType.CaseStudies}>
+			<Vector position='left' />
+			<Vector position='right' />
+			<Container className='relative z-20'>
 				<Title
 					title='Case Studies'
 					text='An in-depth exploration of projects and challenges, showcasing innovative solutions, strategic thinking, and measurable outcomes that demonstrate expertise and impact.'
@@ -106,7 +109,7 @@ const CaseStudies = () => {
 						</CarouselContent>
 						<CarouselNavigation
 							className='absolute -bottom-20 left-auto top-auto w-full justify-end gap-2'
-							classNameButton='bg-zinc-800 *:stroke-zinc-50 dark:bg-blue-900 dark:*:stroke-white'
+							classNameButton='bg-zinc-800 *:stroke-zinc-50 bg-blue-900 *:stroke-white'
 							alwaysShow
 						/>
 					</Carousel>

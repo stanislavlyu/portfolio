@@ -7,7 +7,7 @@ const Experience = dynamic(() => import('@components/Experience'))
 const Testimonials = dynamic(() => import('@components/Testimonials'))
 const Contact = dynamic(() => import('@components/Contact'))
 
-export default function Home() {
+export default async function Home() {
 	return (
 		<>
 			<Hero />

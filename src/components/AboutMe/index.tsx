@@ -15,16 +15,16 @@
 // const AboutMe = () => {
 // 	return (
 // 		<section className='relative h-dvh snap-center overflow-x-hidden md:min-h-[46rem]'>
-// 			<div className='absolute right-[1rem] top-0 h-[20%] w-[15%] rounded-full bg-gradient-to-r from-white to-black blur-3xl dark:from-cyan-500 dark:to-blue-500 dark:opacity-30 sm:-right-[7rem] md:-right-32' />
-// 			<div className='absolute -left-[40%] top-0 h-full w-[50%] rounded-full bg-gradient-to-r from-white to-black opacity-50 blur-3xl dark:from-cyan-500 dark:to-blue-500 dark:opacity-10 sm:-left-[42%] md:-left-[45%]' />
+// 			<div className='absolute right-[1rem] top-0 h-[20%] w-[15%] rounded-full bg-gradient-to-r from-white to-black blur-3xl from-cyan-500 to-blue-500 opacity-30 sm:-right-[7rem] md:-right-32' />
+// 			<div className='absolute -left-[40%] top-0 h-full w-[50%] rounded-full bg-gradient-to-r from-white to-black opacity-50 blur-3xl from-cyan-500 to-blue-500 opacity-10 sm:-left-[42%] md:-left-[45%]' />
 // 			<Container className='flex h-full flex-col items-center justify-center'>
 // 				<div className='grid h-full grid-cols-1 items-center justify-between gap-4 md:grid-cols-2 lg:gap-20'>
-// 					<div className='order-2 flex h-full w-full flex-col justify-center gap-2 text-black dark:text-white md:order-1'>
+// 					<div className='order-2 flex h-full w-full flex-col justify-center gap-2 text-black text-white md:order-1'>
 // 						<h1 className='text-4xl font-semibold md:text-5xl lg:text-6xl xl:text-7xl'>
 // 							<span>Hi there, I am</span>
 // 							<TextShimmer
 // 								duration={3}
-// 								className='[--base-color:theme(colors.red.700)] [--base-gradient-color:theme(colors.red.200)] dark:[--base-color:theme(colors.red.800)] dark:[--base-gradient-color:theme(colors.red.400)]'
+// 								className='[--base-color:theme(colors.red.700)] [--base-gradient-color:theme(colors.red.200)] [--base-color:theme(colors.red.800)] [--base-gradient-color:theme(colors.red.400)]'
 // 							>
 // 								Stanislav Lyu!
 // 							</TextShimmer>

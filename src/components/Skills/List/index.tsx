@@ -10,7 +10,7 @@ const SkillsList = ({ skillsList }: SkillsListProps) => {
 				<li key={name}>
 					<Badge
 						variant='outline'
-						className='relative rounded-lg text-base font-normal dark:text-white'
+						className='relative rounded-lg text-base font-normal text-white'
 					>
 						<BorderTrail
 							style={{

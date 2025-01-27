@@ -4,11 +4,13 @@ import Container from '@components/Container'
 import Section from '@components/Section'
 import Title from '@components/Title'
 import { Button } from '@components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@components/ui/card'
 import { SectionType } from '@utils/types'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
+import Card from './Card'
+import GradientOverlay from './GradientOverlay'
+import Vector from './Vector'
 import { EXPERIENCE_LIST } from './constants'
 
 const Experience = () => {
@@ -23,7 +25,8 @@ const Experience = () => {
 	}
 	return (
 		<Section id={SectionType.Experience} className='py-10'>
-			<Container>
+			<Vector />
+			<Container className='relative z-20'>
 				<Title
 					title='Work Experience'
 					text='A showcase of my journey, skills, and contributions across diverse roles. From building high-performance websites to developing cutting-edge platforms, here are my career highlights.'
@@ -35,29 +38,9 @@ const Experience = () => {
 					className='relative mt-8 flex flex-col gap-4 overflow-hidden'
 				>
 					{EXPERIENCE_LIST.map((job, index) => (
-						<Card
-							key={index}
-							className='rounded-lg bg-black/50 shadow-md transition duration-300 hover:shadow-lg'
-						>
-							<CardHeader>
-								<CardTitle className='text-xl font-semibold'>{job.role}</CardTitle>
-								<CardDescription>{job.company}</CardDescription>
-								<p className='text-sm text-gray-500'>{job.duration}</p>
-							</CardHeader>
-							<CardContent>
-								<ul className='list-inside list-disc space-y-2'>
-									{job.responsibilities.map((task, idx) => (
-										<li key={idx} className='text-muted-foreground'>
-											{task}
-										</li>
-									))}
-								</ul>
-							</CardContent>
-						</Card>
+						<Card key={index} {...job} />
 					))}
-					{!isOpen && (
-						<div className='pointer-events-none absolute bottom-0 left-0 h-12 w-full bg-white to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_top,white,transparent)] dark:bg-neutral-900' />
-					)}
+					{!isOpen && <GradientOverlay />}
 				</motion.div>
 				<Button variant='outline' className='mt-4' onClick={handleToggle}>
 					{isOpen ? 'Show Less' : 'Show More'}

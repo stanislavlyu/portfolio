@@ -53,7 +53,7 @@ const Testimonials = () => {
 					</CarouselContent>
 					<CarouselNavigation
 						className='absolute -bottom-20 left-auto top-auto w-full justify-end gap-2'
-						classNameButton='bg-zinc-800 *:stroke-zinc-50 dark:bg-blue-900 dark:*:stroke-white'
+						classNameButton='bg-zinc-800 *:stroke-zinc-50 bg-blue-900 *:stroke-white'
 						alwaysShow
 					/>
 				</Carousel>

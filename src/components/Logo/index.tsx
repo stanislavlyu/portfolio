@@ -15,8 +15,8 @@ const Logo = ({ className }: LogoProps) => {
 				'animate-fade w-max',
 				className,
 				sectionType === SectionType.Hero
-					? 'text-white animate-in fade-in-50 hover:text-red-600'
-					: 'text-red-600 animate-out fade-out-50'
+					? 'text-white animate-in fade-in-50 hover:text-blue-600'
+					: 'text-blue-600 animate-out fade-out-50'
 			)}
 			href='/'
 		>
