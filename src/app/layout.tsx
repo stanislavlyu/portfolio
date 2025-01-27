@@ -1,6 +1,5 @@
 import Footer from '@components/Footer'
 import Header from '@components/Header'
-import { Spotlight } from '@components/ui/spotlight'
 import { inter, firaCode } from '@fonts/fonts'
 import { cn } from '@lib/utils'
 import ReactQueryProvider from '@providers/react-query-provider'

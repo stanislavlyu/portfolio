@@ -13,7 +13,7 @@ export default function Icon() {
 				style={{
 					fontWeight: 'bold',
 					fontSize: 24,
-					background: '#b91c1c',
+					background: '#1d4ed8',
 					borderRadius: '4px',
 					width: '100%',
 					height: '100%',
