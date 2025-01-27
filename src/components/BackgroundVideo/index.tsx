@@ -1,34 +1,26 @@
+'use client'
+
+import { CldVideoPlayer } from 'next-cloudinary'
+import 'next-cloudinary/dist/cld-video-player.css'
 import React from 'react'
 import { cn } from '@/lib/utils'
-import { VideoProps } from './types.js'
+import { BackgroundVideoProps } from './types.js'
 
-const BackgroundVideo = ({
-	className,
-	autoPlay,
-	muted = true,
-	controls,
-	loop = true,
-	preload = 'none',
-	src,
-	poster,
-}: VideoProps) => {
+const BackgroundVideo = ({ className, loop = true, src, ...restProps }: BackgroundVideoProps) => {
 	return (
-		<div className='absolute inset-0 -z-[1] h-full w-full'>
-			<video
-				className={cn('h-full w-full object-cover', className)}
-				controls={controls}
-				autoPlay={autoPlay}
-				preload={preload}
-				aria-label='Video player'
-				poster={poster}
-				muted={muted}
+		<div className={cn('absolute left-0 top-0 -z-[1] h-full w-full', className)}>
+			<CldVideoPlayer
 				loop={loop}
-				suppressHydrationWarning
-				playsInline={autoPlay}
-			>
-				<source src={src} type='video/mp4' />
-				Your browser does not support the video tag.
-			</video>
+				autoplay={true}
+				muted={true}
+				controls={false}
+				transformation={{
+					quality: 90,
+					format: 'webp',
+				}}
+				src={src}
+				{...restProps}
+			/>
 		</div>
 	)
 }

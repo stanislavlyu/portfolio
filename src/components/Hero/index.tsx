@@ -16,8 +16,9 @@ const Hero = () => {
 			enableAnimation={false}
 		>
 			<BackgroundVideo
-				src='/assets/videos/hero-background.mp4'
-				poster='/assets/images/hero-background.webp'
+			className='video-fullscreen'
+				id='hero-video'
+				src='portfolio/hero-background'
 				autoPlay
 				preload='auto'
 			/>

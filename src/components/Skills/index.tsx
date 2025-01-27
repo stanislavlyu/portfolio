@@ -19,10 +19,15 @@ const Skills = () => {
 				/>
 				<div className='mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10'>
 					<Video
+						id='skills-video'
 						className='h-full w-full scale-x-[-1] lg:order-last'
-						src='/assets/videos/devices.mp4'
-						poster='/assets/images/devices.webp'
-						autoPlay
+						src='portfolio/devices_background'
+						autoplay={true}
+						muted
+						loop
+						controls={false}
+						height={424}
+						width={588}
 					/>
 					<div className='flex flex-wrap gap-8'>
 						{ITEMS.map(({ title, skills }) => (

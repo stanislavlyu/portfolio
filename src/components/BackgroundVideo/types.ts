@@ -1,10 +1,5 @@
-export type VideoProps = {
-	src: string
-	poster?: string
-	autoPlay?: boolean
-	controls?: boolean
+import { CldVideoPlayerProps } from 'next-cloudinary'
+
+export type BackgroundVideoProps = {
 	className?: string
-	muted?: boolean
-	loop?: boolean
-	preload?: 'none' | 'metadata' | 'auto'
-}
+} & CldVideoPlayerProps
