@@ -2,6 +2,7 @@ import { Input } from '@components/ui/input'
 import { Textarea } from '@components/ui/textarea'
 import { z } from 'zod'
 import { ControllerRenderProps } from 'react-hook-form'
+import { cn } from '@/lib/utils'
 import { formSchema } from './constants'
 import { FormFields } from './types'
 
@@ -10,37 +11,25 @@ export const renderInputComponent = (
 	placeholder: string,
 	field: ControllerRenderProps<FormFields>
 ) => {
+	const sharedProps = {
+		className: 'bg-black',
+		placeholder,
+		...field,
+		value: field.value as string,
+	}
+
 	switch (type) {
 		case 'textarea':
 			return (
 				<Textarea
-					className='min-h-40 resize-none bg-black'
-					placeholder={placeholder}
-					{...field}
-					value={field.value as string}
+					{...sharedProps}
+					className={cn('min-h-40 resize-none', sharedProps.className)}
 				/>
 			)
 		case 'email':
-			return (
-				<Input
-					className='bg-black'
-					id={field.name}
-					type='email'
-					placeholder={placeholder}
-					{...field}
-					value={field.value as string}
-				/>
-			)
+			return <Input {...sharedProps} type='email' />
 		default:
-			return (
-				<Input
-					className='bg-black'
-					id={field.name}
-					placeholder={placeholder}
-					{...field}
-					value={field.value as string}
-				/>
-			)
+			return <Input {...sharedProps} />
 	}
 }
 

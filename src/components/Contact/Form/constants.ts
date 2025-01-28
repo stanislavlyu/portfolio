@@ -1,15 +1,9 @@
 import { z } from 'zod'
 
 export const formSchema = z.object({
-	name: z.string().min(2, {
-		message: 'Name must be at least 2 characters.',
-	}),
-	email: z.string().email({
-		message: 'Email is not valid.',
-	}),
-	message: z.string().min(5, {
-		message: 'Message must be at least 5 characters.',
-	}),
+	name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+	email: z.string().email({ message: 'Email is not valid.' }),
+	message: z.string().min(5, { message: 'Message must be at least 5 characters.' }),
 })
 
 export const defaultValues = {
@@ -22,7 +16,7 @@ export const FORM_FIELDS = [
 	{
 		id: 'name',
 		name: 'name',
-		label: 'Full name',
+		label: 'Full Name',
 		placeholder: 'Enter your name',
 		type: 'text',
 		className: 'col-span-2 md:col-span-1',

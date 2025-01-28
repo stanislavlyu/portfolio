@@ -1,17 +1,17 @@
 import { z } from 'zod'
+import { Dispatch, SetStateAction } from 'react'
 import { UseFormReturn } from 'react-hook-form'
 import { formSchema } from './constants'
 import { sendContactMessage } from './helpers'
 
-export const useContactMutation = (form: UseFormReturn<z.infer<typeof formSchema>>) => ({
+export const useContactMutation = (
+	form: UseFormReturn<z.infer<typeof formSchema>>,
+	setDialogOpen: Dispatch<SetStateAction<boolean>>
+) => ({
 	mutationFn: sendContactMessage,
 	onSuccess: async () => {
-		const { toast } = await import('@hooks/use-toast')
 		form.reset()
-		toast({
-			variant: 'default',
-			description: 'Message sent successfully!',
-		})
+		setDialogOpen(true)
 	},
 	onError: async (error: Error) => {
 		const { toast } = await import('@hooks/use-toast')
