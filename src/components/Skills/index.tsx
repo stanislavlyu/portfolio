@@ -20,7 +20,7 @@ const Skills = () => {
 				<div className='mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2'>
 					<div className='-scale-x-100 lg:order-last'>
 						<Video
-							className='w-full scale-[1.25] lg:h-[28.875rem]'
+							className='w-full md:scale-[1.25] lg:h-[28.875rem]'
 							autoPlay
 							src={videoSrc}
 							loop
