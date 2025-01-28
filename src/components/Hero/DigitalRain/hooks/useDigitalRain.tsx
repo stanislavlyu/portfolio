@@ -17,12 +17,15 @@ const useDigitalRain = () => {
 		canvas.width = window.innerWidth
 		canvas.height = window.innerHeight
 
-		// Create initial particles
-		const particles: Particle[] = []
-		const numParticles = DIGITAL_RAIN_CONFIG.numParticles
+		const isMobile = window.innerWidth <= 768
+		const numParticles = isMobile
+			? DIGITAL_RAIN_CONFIG.numParticles / 3
+			: DIGITAL_RAIN_CONFIG.numParticles
 		const connectionDistance = DIGITAL_RAIN_CONFIG.connectionDistance
 		const maxSpeed = DIGITAL_RAIN_CONFIG.maxSpeed
 
+		// Create initial particles
+		const particles: Particle[] = []
 		for (let i = 0; i < numParticles; i++) {
 			particles.push({
 				x: Math.random() * canvas.width,
