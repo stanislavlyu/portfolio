@@ -20,7 +20,7 @@ const Hero = () => {
 		>
 			<div className='absolute inset-0'>
 				<VideoPlayer
-					url='/assets/videos/hero.mp4'
+					url='https://res.cloudinary.com/dxolewbzx/video/upload/v1738028417/hero_ybhlds.mp4'
 					playing
 					loop
 					muted

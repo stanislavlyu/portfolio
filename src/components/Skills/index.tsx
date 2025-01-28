@@ -19,7 +19,7 @@ const Skills = () => {
 				<div className='mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10'>
 					<VideoPlayer
 						className='h-full w-full scale-x-[-1] lg:order-last'
-						url='/assets/videos/devices.mp4'
+						url='https://res.cloudinary.com/dxolewbzx/video/upload/v1737965191/portfolio/devices_background.mp4'
 						playing
 						loop
 						muted
