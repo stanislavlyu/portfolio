@@ -34,7 +34,7 @@ const Experience = () => {
 					{!isOpen && <GradientOverlay />}
 				</motion.div>
 				{!isOpen && (
-					<Button variant='outline' className='mt-4' onClick={() => setIsOpen(false)}>
+					<Button variant='outline' className='mt-4' onClick={() => setIsOpen(true)}>
 						Show More
 					</Button>
 				)}
