@@ -1,4 +1,5 @@
 {
   "https://1plfpyci9uyh8zpo.public.blob.vercel-storage.com/hero-background-JrDiGL4kh3jEDkMu8ynN43Q0XJFNQh.mp4": { "integrity": "sha512-1skti/41sL28bAiD+wPGndpXLxgKU2i9oHjI1Rud+aLFENg5pmp/tNHZqUQmJcN1aPIYRoLH+MI6Fg5yuDyMFQ==", "contentType": "video/mp4" },
+  "https://res.cloudinary.com/dxolewbzx/video/upload/v1738028417/hero_ybhlds.mp4": { "integrity": "sha512-YoFbyItxz/66zgZAFBoBrv5syN+wvfqKGxLzr8DLv7+xxAnHbgctRb60fYh4dAPgRt003xdC8dDC3eRt0jnjnA==", "contentType": "video/mp4;codecs=avc1" },
   "version": 1
 }
