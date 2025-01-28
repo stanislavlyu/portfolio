@@ -28,7 +28,7 @@ const Testimonials = () => {
 							key={id}
 							className='basis-full pl-4 md:basis-1/2 lg:basis-1/3'
 						>
-							<Card className='flex flex-col justify-between bg-black/50 lg:h-[28rem]'>
+							<Card className='flex flex-col justify-between bg-black/50'>
 								<CardHeader>
 									<CardTitle className='text-white'>{Logo}</CardTitle>
 									<CardDescription className='!mt-8'>{text}</CardDescription>
