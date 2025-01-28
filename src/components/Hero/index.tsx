@@ -18,19 +18,17 @@ const Hero = () => {
 			className='h-svh overflow-hidden py-0 md:min-h-[46rem] md:py-0 lg:py-0 2xl:h-[55rem]'
 			enableAnimation={false}
 		>
-			<div className='absolute inset-0'>
-				<VideoPlayer
-					url='https://res.cloudinary.com/dxolewbzx/video/upload/v1738028417/hero_ybhlds.mp4'
-					playing
-					loop
-					muted
-					width='100%'
-					height='100%'
-					className='object-cover'
-					playsinline
-				/>
-			</div>
-			<div className='container h-full flex-col items-center justify-center'>
+			<VideoPlayer
+				url='https://res.cloudinary.com/dxolewbzx/video/upload/v1738028417/hero_ybhlds.mp4'
+				playing
+				loop
+				muted
+				width='100%'
+				height='100%'
+				className='absolute left-0 top-0 -z-10'
+				playsinline
+			/>
+			<div className='container h-full'>
 				<div className='relative z-10 flex h-full w-full flex-col items-center justify-center gap-2 text-center text-white md:order-1'>
 					<Title text='Stanislav Lyu' intro='Hi there, I am' />
 					<Description
