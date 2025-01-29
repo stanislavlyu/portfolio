@@ -30,7 +30,13 @@ const Hero = () => {
 				</div>
 			</div>
 			<div className='absolute bottom-6 z-10 w-full'>
-				<Marquee speed={50} direction='right' pauseOnHover>
+				<Marquee
+					gradient
+					gradientColor='#000000'
+					gradientWidth={40}
+					speed={50}
+					direction='right'
+				>
 					{TECH_ICONS.map(({ title, icon, alt }, index) => (
 						<div
 							key={index}
