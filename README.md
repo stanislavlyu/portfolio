@@ -13,8 +13,8 @@ This repository contains the source code for my personal portfolio website. The 
 
 ## Technologies Used
 - **Frontend Framework**: Next.js, React
-- **Styling**: Tailwind CSS, Sass
-- **State Management**: Redux
+- **Styling**: Tailwind CSS
+- **State Management**: Zustand
 - **Build Tools**: Webpack, ESLint
 - **Deployment**: Vercel
 
