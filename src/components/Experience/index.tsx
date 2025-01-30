@@ -24,8 +24,8 @@ const Experience = () => {
 				/>
 				<motion.div
 					animate={{ height: isOpen ? 'auto' : 450 }}
-					initial={{ height: 450 }}
-					transition={{ duration: 0.3, ease: 'easeInOut' }}
+					initial={{ height: 500 }}
+					transition={{ duration: 0.3, ease: 'easeOut' }}
 					className='relative mt-8 flex flex-col gap-4 overflow-hidden lg:gap-8'
 				>
 					{EXPERIENCE_LIST.map((job, index) => (
