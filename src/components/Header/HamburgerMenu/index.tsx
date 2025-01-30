@@ -28,7 +28,7 @@ const HamburgerMenu = () => {
 					<SheetTitle>Navigation menu</SheetTitle>
 					<SheetDescription>Navigate between sections here.</SheetDescription>
 				</SheetHeader>
-				<NavigationMenu className='flex flex-col' />
+				<NavigationMenu className='flex flex-col' isHamburgerMenu />
 				<SheetFooter>
 					<SheetClose asChild>
 						<Button className='w-full' asChild>
