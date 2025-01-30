@@ -16,7 +16,6 @@ export const ABOUT_ME_HIGHLIGHT_LIST = [
 	'✅ Experienced with Jest and React Testing Library for testing',
 	'🤝 Collaborates with designers, backend developers, and product teams',
 	'📚 Continuously learns and adapts to the latest technologies',
-	'🎯 Open to new opportunities',
 ]
 
 export const ABOUT_ME_AVATARS = [
