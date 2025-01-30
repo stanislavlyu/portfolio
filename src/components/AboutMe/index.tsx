@@ -18,7 +18,7 @@ const AboutMe = () => {
 						<Avatar key={alt} src={src} alt={alt} />
 					))}
 				</div>
-				<ul className='flex flex-col space-y-2 lg:max-w-[30rem] lg:space-y-4'>
+				<ul className='flex w-full flex-col space-y-2 lg:max-w-[30rem] lg:space-y-4'>
 					{ABOUT_ME_HIGHLIGHT_LIST.map((text) => (
 						<li key={text} className='text-md text-muted-foreground'>
 							{text}

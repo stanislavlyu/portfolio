@@ -23,7 +23,7 @@ const Experience = () => {
 					text='A showcase of my journey, skills, and contributions across diverse roles. From building high-performance websites to developing cutting-edge platforms, here are my career highlights.'
 				/>
 				<motion.div
-					animate={{ height: isOpen ? 'auto' : 450 }}
+					animate={{ height: isOpen ? 'auto' : 500 }}
 					initial={{ height: 500 }}
 					transition={{ duration: 0.3, ease: 'easeOut' }}
 					className='relative mt-8 flex flex-col gap-4 overflow-hidden lg:gap-8'
