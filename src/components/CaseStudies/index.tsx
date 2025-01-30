@@ -34,7 +34,7 @@ const CaseStudies = () => {
 									title,
 									description,
 									backgroundImage,
-									logo,
+									Logo,
 									button,
 								}) => (
 									<CarouselItem
@@ -45,6 +45,7 @@ const CaseStudies = () => {
 											<Image
 												className='absolute left-0 right-0 h-full w-full object-cover'
 												fill
+												sizes='(max-width: 640px) 100vw, 50vw'
 												placeholder='blur'
 												{...backgroundImage}
 											/>
@@ -61,10 +62,7 @@ const CaseStudies = () => {
 													)}
 												>
 													<div>
-														<Image
-															className='pointer-events-none object-cover'
-															{...logo}
-														/>
+														{Logo}
 														<h3 className='mt-6 text-[1.5625rem] font-semibold leading-[2.1875rem] lg:mt-8 lg:text-[2.375rem] lg:leading-[3rem]'>
 															{title}
 														</h3>
