@@ -25,7 +25,7 @@ const CaseStudies = () => {
 					title='Case Studies'
 					text='An in-depth exploration of projects and challenges, showcasing innovative solutions, strategic thinking, and measurable outcomes that demonstrate expertise and impact.'
 				/>
-				<div className='relative mt-16 w-full'>
+				<div className='relative w-full'>
 					<Carousel>
 						<CarouselContent className='-ml-4'>
 							{SLIDES.map(

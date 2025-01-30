@@ -14,7 +14,7 @@ const HeaderNavigationMenu = ({ className }: NavigationMenuProps) => {
 					key={id}
 					data-id={id}
 					type='button'
-					className='h-auto px-2 py-2 text-zinc-300 transition-colors duration-300 hover:bg-zinc-800 hover:text-white'
+					className='h-auto px-2 py-2 text-zinc-300 transition-colors duration-300 hover:bg-blue-800 hover:text-white'
 					asChild
 					role='link'
 				>

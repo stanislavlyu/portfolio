@@ -21,7 +21,7 @@ const Testimonials = () => {
 				title='Testimonials'
 				text="Discover what others are saying about my work, skills, and contributions. These testimonials highlight the impact I've made and the value I bring to every project."
 			/>
-			<Carousel className='mt-16'>
+			<Carousel>
 				<CarouselContent className='-ml-4'>
 					{CAROUSEL_ITEMS.map(({ id, text, avatar, Logo, name, position }) => (
 						<CarouselItem

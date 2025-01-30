@@ -5,9 +5,11 @@ export enum SectionType {
 	Experience = 'experience',
 	Testimonials = 'testimonials',
 	Contact = 'contact',
+	AboutMe = 'aboutMe',
 }
 
 export const NAVIGATION_LIST = [
+	{ id: SectionType.AboutMe, title: 'About Me' },
 	{ id: SectionType.CaseStudies, title: 'Case Studies' },
 	{ id: SectionType.Skills, title: 'Skills' },
 	{ id: SectionType.Experience, title: 'Experience' },

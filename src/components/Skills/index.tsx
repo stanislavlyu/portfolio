@@ -17,7 +17,7 @@ const Skills = () => {
 					title='Skills'
 					text='A comprehensive showcase of technical expertise and interpersonal abilities, highlighting the tools, technologies, and soft skills that contribute to professional success and effective collaboration.'
 				/>
-				<div className='mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2'>
+				<div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
 					<div className='-scale-x-100 lg:order-last'>
 						<Video
 							className='w-full md:scale-[1.25] lg:h-[28.875rem]'

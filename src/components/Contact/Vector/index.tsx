@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const ContactVector = () => {
 	return (
-		<div className={cn('absolute inset-0 -z-10 h-full w-full')}>
+		<div className={cn('absolute inset-0 -z-10 h-full w-full -scale-x-[1]')}>
 			<div
 				className={cn(
 					'absolute top-0 z-10',

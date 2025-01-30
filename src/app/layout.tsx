@@ -1,4 +1,5 @@
 import Header from '@components/Header'
+import { Spotlight } from '@components/ui/spotlight'
 import { inter, firaCode } from '@fonts/fonts'
 import { cn } from '@lib/utils'
 import ReactQueryProvider from '@providers/react-query-provider'
@@ -17,7 +18,7 @@ export const metadata: Metadata = FALLBACK_SEO
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang='en'>
-			<body className={cn('min-h-screen', inter.variable, firaCode.variable)}>
+			<body className={cn('relative min-h-screen', inter.variable, firaCode.variable)}>
 				<ReactQueryProvider>
 					<Header />
 					<main>{children}</main>

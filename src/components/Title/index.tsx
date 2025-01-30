@@ -8,7 +8,7 @@ const Title = ({ variant = TitleVariant.Horizontal, className, title, text }: Ti
 	return (
 		<div
 			className={cn(
-				'flex flex-col items-center justify-between gap-2 md:flex-row md:items-start',
+				'mb-4 flex flex-col items-center justify-between gap-2 md:mb-8 md:flex-row md:items-start lg:mb-16',
 				{
 					'flex-col items-center gap-2': variant === TitleVariant.Vertical,
 				},
@@ -18,7 +18,7 @@ const Title = ({ variant = TitleVariant.Horizontal, className, title, text }: Ti
 			<h2 className='text-center text-[2rem] font-bold capitalize leading-10 md:text-[2.5rem] md:leading-[3rem]'>
 				<TextShimmer
 					duration={3}
-					className='[--base-color:theme(colors.blue.700)] [--base-gradient-color:theme(colors.blue.200)] [--base-gradient-color:theme(colors.blue.400)]'
+					className='[--base-color:theme(colors.blue.700)] [--base-gradient-color:theme(colors.blue.400)]'
 				>
 					{title}
 				</TextShimmer>
@@ -26,7 +26,7 @@ const Title = ({ variant = TitleVariant.Horizontal, className, title, text }: Ti
 			{text && (
 				<div
 					className={cn(
-						'max-w-[30rem] text-center font-firaCode text-base text-black text-gray-300 md:text-right',
+						'max-w-[30rem] text-center font-firaCode text-base text-gray-300 md:text-right',
 						{
 							'text-center': variant === TitleVariant.Vertical,
 						}
