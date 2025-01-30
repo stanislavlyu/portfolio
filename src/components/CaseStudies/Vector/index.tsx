@@ -19,7 +19,13 @@ const Vector = ({ position, className }: CaseStudiesVectorProps) => {
 					'h-20 w-full bg-gradient-to-b from-black to-transparent'
 				)}
 			/>
-			<Image src='/assets/images/vector.svg' alt='case studies background' fill unoptimized />
+			<Image
+				className='object-cover'
+				src='/assets/images/vector.svg'
+				alt='case studies background'
+				fill
+				unoptimized
+			/>
 		</div>
 	)
 }

@@ -2,9 +2,9 @@ import Section from '@components/Section'
 import SkillsList from '@components/Skills/List'
 import Title from '@components/Title'
 import { TitleVariant } from '@components/Title/types'
+import VideoPlayer from '@components/VideoPlayer'
 import { SectionType } from '@utils/types'
 import React from 'react'
-import VideoPlayer from '@/components/VideoPlayer'
 import { ITEMS } from './constants'
 
 const Skills = () => {
@@ -27,7 +27,7 @@ const Skills = () => {
 						controls={false}
 						playsInline
 					/>
-					<div className='flex h-max w-full max-w-[40rem] flex-wrap gap-8'>
+					<div className='flex h-max w-full flex-wrap gap-8 lg:max-w-[40rem]'>
 						{ITEMS.map(({ title, skills }) => (
 							<div key={title} className='py-2'>
 								<h3 className='mb-3 max-w-[20rem] font-medium text-zinc-100'>

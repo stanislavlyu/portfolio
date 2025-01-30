@@ -10,7 +10,13 @@ const ExperienceVector = () => {
 					'h-20 w-full bg-gradient-to-b from-black to-transparent'
 				)}
 			/>
-			<Image src='/assets/images/vortex.svg' alt='case studies background' fill unoptimized />
+			<Image
+				className='object-cover'
+				src='/assets/images/vortex.svg'
+				alt='case studies background'
+				fill
+				unoptimized
+			/>
 			<div
 				className={cn(
 					'absolute bottom-0 z-10',

@@ -26,7 +26,7 @@ const Experience = () => {
 					animate={{ height: isOpen ? 'auto' : 450 }}
 					initial={{ height: 450 }}
 					transition={{ duration: 0.3, ease: 'easeInOut' }}
-					className='relative mt-8 flex flex-col gap-4 overflow-hidden'
+					className='relative mt-8 flex flex-col gap-4 overflow-hidden lg:gap-8'
 				>
 					{EXPERIENCE_LIST.map((job, index) => (
 						<Card key={index} {...job} />

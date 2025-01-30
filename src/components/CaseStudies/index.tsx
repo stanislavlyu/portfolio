@@ -19,7 +19,7 @@ const CaseStudies = () => {
 	return (
 		<Section id={SectionType.CaseStudies}>
 			<Vector position='left' />
-			<Vector position='right' className='hidden md:block' />
+			<Vector position='right' className='hidden lg:block' />
 			<div className='container relative z-20'>
 				<Title
 					title='Case Studies'
@@ -39,7 +39,7 @@ const CaseStudies = () => {
 								}) => (
 									<CarouselItem
 										key={title}
-										className='basis-full pl-4 md:basis-1/2'
+										className='basis-full pl-4 lg:basis-1/2'
 									>
 										<div className='relative basis-full overflow-hidden rounded-2xl'>
 											<Image
@@ -52,7 +52,7 @@ const CaseStudies = () => {
 											<div className='justify-between px-6 py-6 lg:px-16 lg:py-10'>
 												<div
 													className={cn(
-														'relative z-10 flex h-full flex-grow flex-col items-start justify-between gap-6 md:gap-8',
+														'relative z-10 flex h-full flex-grow flex-col items-start justify-between gap-6 lg:gap-8',
 														{
 															'text-white':
 																variant === SlideVariant.White,
@@ -68,7 +68,7 @@ const CaseStudies = () => {
 														</h3>
 														<p
 															className={cn(
-																'mt-6 text-[0.875rem] leading-6 md:min-h-[4.5rem] lg:mt-4',
+																'mt-6 text-[0.875rem] leading-6 lg:mt-4 lg:min-h-[4.5rem]',
 																{
 																	'text-gray-300':
 																		variant ===
