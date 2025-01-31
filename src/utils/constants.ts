@@ -5,3 +5,4 @@ export const FALLBACK_SEO = {
 }
 
 export const COLORS = ['#18F7CF', '#0092FC', '#1F6BFF', '#1347FF']
+export const IMAGEKIT_URL_ENDPOINT = process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT

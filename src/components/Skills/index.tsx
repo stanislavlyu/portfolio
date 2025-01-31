@@ -19,7 +19,8 @@ const Skills = () => {
 				<div className='flex flex-col justify-between gap-8 lg:flex-row'>
 					<VideoPlayer
 						className='aspect-square w-full -scale-x-100 lg:order-last lg:max-w-[25rem]'
-						src='/assets/videos/devices.mp4'
+						path='/devices.mp4'
+						transformation={[{ width: '800' }]}
 						preload='none'
 						loop
 						muted

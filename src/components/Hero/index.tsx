@@ -1,12 +1,12 @@
 'use client'
 
 import Section from '@components/Section'
+import VideoPlayer from '@components/VideoPlayer'
 import { SectionType } from '@utils/types'
 import Image from 'next/image'
 import React from 'react'
 import Marquee from 'react-fast-marquee'
 import Description from './Description'
-import DigitalRain from './DigitalRain'
 import DownloadCVButton from './DownloadCVButton'
 import { TECH_ICONS } from './Marquee/constants'
 import Title from './Title'
@@ -15,10 +15,19 @@ const Hero = () => {
 	return (
 		<Section
 			id={SectionType.Hero}
-			className='h-svh overflow-hidden py-0 md:min-h-[46rem] md:py-0 lg:py-0 2xl:h-[55rem]'
+			className='h-svh py-0 md:min-h-[46rem] md:py-0 lg:py-0 2xl:h-[55rem]'
 			enableAnimation={false}
 		>
-			<DigitalRain />
+			<VideoPlayer
+				className='absolute left-0 top-0 h-full w-full'
+				path='hero.mp4'
+				preload='auto'
+				loop
+				muted
+				autoPlay
+				controls={false}
+				playsInline
+			/>
 			<div className='container h-full'>
 				<div className='relative z-10 flex h-full w-full flex-col items-center justify-center gap-2 text-center text-white md:order-1'>
 					<Title text='Stanislav Lyu' intro='Hi there, I am' />
