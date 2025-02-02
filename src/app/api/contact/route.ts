@@ -1,4 +1,4 @@
-import { BOT_TOKEN, CHAT_ID } from './constants'
+import { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from '@utils/env'
 import { RequestBody } from './types'
 
 export async function POST(request: Request) {
@@ -12,16 +12,19 @@ export async function POST(request: Request) {
     `
 
 		try {
-			const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					chat_id: CHAT_ID,
-					text,
-				}),
-			})
+			const response = await fetch(
+				`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						chat_id: TELEGRAM_CHAT_ID,
+						text,
+					}),
+				}
+			)
 
 			const data = await response.json()
 
