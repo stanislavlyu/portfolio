@@ -1,46 +1,50 @@
-'use client'
+"use client"
 
-import Section from '@components/Section'
-import Title from '@components/Title'
-import { Button } from '@components/ui/button'
-import { SectionType } from '@utils/types'
-import { motion } from 'framer-motion'
-import React, { useState } from 'react'
-import Card from './Card'
-import GradientOverlay from './GradientOverlay'
-import Vector from './Vector'
-import { EXPERIENCE_LIST } from './constants'
+import Section from "@components/Section"
+import Title from "@components/Title"
+import { Button } from "@components/ui/button"
+import useToggleState from "@hooks/use-toggle-state"
+import { SectionType } from "@utils/types"
+import { AnimatePresence, motion } from "framer-motion"
+import React from "react"
+import Card from "./Card"
+import Vector from "./Vector"
+import { EXPERIENCE_LIST } from "./constants"
 
 const Experience = () => {
-	const [isOpen, setIsOpen] = useState(false)
+  const { state, open } = useToggleState()
+  const visibleJobs = state ? EXPERIENCE_LIST : EXPERIENCE_LIST.slice(0, 2)
 
-	return (
-		<Section id={SectionType.Experience} className='py-10'>
-			<Vector />
-			<div className='container relative z-20'>
-				<Title
-					title='Work Experience'
-					text='A showcase of my journey, skills, and contributions across diverse roles. From building high-performance websites to developing cutting-edge platforms, here are my career highlights.'
-				/>
-				<motion.div
-					animate={{ height: isOpen ? 'auto' : 500 }}
-					initial={{ height: 500 }}
-					transition={{ duration: 0.3, ease: 'easeOut' }}
-					className='relative mt-8 flex flex-col gap-4 overflow-hidden lg:gap-8'
-				>
-					{EXPERIENCE_LIST.map((job, index) => (
-						<Card key={index} {...job} />
-					))}
-					{!isOpen && <GradientOverlay />}
-				</motion.div>
-				{!isOpen && (
-					<Button variant='outline' className='mt-4' onClick={() => setIsOpen(true)}>
-						Show More
-					</Button>
-				)}
-			</div>
-		</Section>
-	)
+  return (
+    <Section id={SectionType.Experience} className="py-10">
+      <Vector />
+      <div className="container relative z-20">
+        <Title
+          title="Work Experience"
+          text="A showcase of my journey, skills, and contributions across diverse roles. From building high-performance websites to developing cutting-edge platforms, here are my career highlights."
+        />
+        <div className="relative mt-8 grid grid-cols-1 gap-4 lg:gap-8 xl:grid-cols-2">
+          <AnimatePresence>
+            {visibleJobs.map((job) => (
+              <motion.div
+                key={job.id}
+                initial={{ opacity: 0, y: -32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <Card {...job} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+        {!state && (
+          <Button variant="outline" className="mt-4" onClick={open}>
+            Show More
+          </Button>
+        )}
+      </div>
+    </Section>
+  )
 }
 
 export default Experience
